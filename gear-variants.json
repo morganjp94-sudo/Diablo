@@ -1,0 +1,357 @@
+{
+  "bloodWaveNecro": {
+    "variants": ["Starter", "Midgame", "Endgame", "Push"],
+    "gearSlots": {
+      "helm": {
+        "starter": {
+          "name": "Hardened Bones",
+          "type": "UNIQUE",
+          "aspect": "Hardened Bones - Damage Reduction + Corpse Generation",
+          "priorities": ["Essence Regeneration (5+ minimum)", "Resource Cost Reduction", "Maximum Life", "Armor", "Intelligence"]
+        },
+        "midgame": {
+          "name": "Hardened Bones",
+          "type": "UNIQUE",
+          "aspect": "Hardened Bones",
+          "priorities": ["Essence Regeneration (upgraded)", "Resource Cost Reduction", "Maximum Life"]
+        },
+        "endgame": {
+          "name": "Hardened Bones",
+          "type": "UNIQUE (+2 UPGRADED)",
+          "aspect": "Hardened Bones",
+          "priorities": ["Essence Regeneration (perfect roll)", "Resource Cost Reduction", "Maximum Life"]
+        },
+        "push": {
+          "name": "Hardened Bones",
+          "type": "ANCIENT/PERFECT (+2 UPGRADED)",
+          "aspect": "Hardened Bones",
+          "priorities": ["Essence Regeneration (PERFECT)", "Resource Cost Reduction (PERFECT)", "Maximum Life (PERFECT)"]
+        }
+      },
+      "chest": {
+        "starter": {
+          "name": "Juggernaut's",
+          "type": "UNIQUE",
+          "aspect": "Juggernaut's - Toughness boost",
+          "priorities": ["Essence Regeneration (5+ minimum)", "Resource Cost Reduction", "Maximum Life", "Armor", "Intelligence"]
+        },
+        "midgame": {
+          "name": "Juggernaut's",
+          "type": "UNIQUE",
+          "aspect": "Juggernaut's",
+          "priorities": ["Essence Regeneration (upgraded)", "Resource Cost Reduction", "Maximum Life"]
+        },
+        "endgame": {
+          "name": "Juggernaut's",
+          "type": "UNIQUE (+2 UPGRADED)",
+          "aspect": "Juggernaut's",
+          "priorities": ["Essence Regeneration (perfect roll)", "Resource Cost Reduction", "Maximum Life"]
+        },
+        "push": {
+          "name": "Juggernaut's",
+          "type": "ANCIENT/PERFECT (+2 UPGRADED)",
+          "aspect": "Juggernaut's",
+          "priorities": ["Essence Regeneration (PERFECT)", "Resource Cost Reduction (PERFECT)", "Maximum Life (PERFECT)"]
+        }
+      },
+      "gloves": {
+        "starter": {
+          "name": "Rathma's Chosen",
+          "type": "UNIQUE",
+          "aspect": "Rathma's Chosen",
+          "priorities": ["Intelligence", "Maximum Life", "Critical Strike Chance", "Attack Speed"]
+        },
+        "midgame": {
+          "name": "Rathma's Chosen",
+          "type": "UNIQUE",
+          "aspect": "Rathma's Chosen",
+          "priorities": ["Intelligence (upgraded)", "Maximum Life", "Critical Strike Chance"]
+        },
+        "endgame": {
+          "name": "Rathma's Chosen",
+          "type": "UNIQUE (+2 UPGRADED)",
+          "aspect": "Rathma's Chosen",
+          "priorities": ["Intelligence (perfect)", "Maximum Life (perfect)", "Critical Strike Chance (perfect)"]
+        },
+        "push": {
+          "name": "Rathma's Chosen",
+          "type": "ANCIENT/PERFECT (+2 UPGRADED)",
+          "aspect": "Rathma's Chosen",
+          "priorities": ["Intelligence (PERFECT)", "Maximum Life (PERFECT)", "Critical Strike Chance (PERFECT)"]
+        }
+      },
+      "pants": {
+        "starter": {
+          "name": "Kessime's Legacy",
+          "type": "UNIQUE",
+          "uniqueEffect": "DOUBLES wave damage (two waves from both sides)",
+          "priorities": ["Maximum Life", "Armor", "Intelligence", "Unique Effect (MANDATORY)"]
+        },
+        "midgame": {
+          "name": "Kessime's Legacy",
+          "type": "UNIQUE",
+          "uniqueEffect": "DOUBLES wave damage",
+          "priorities": ["Maximum Life (upgraded)", "Armor", "Intelligence"]
+        },
+        "endgame": {
+          "name": "Kessime's Legacy",
+          "type": "UNIQUE (+2 UPGRADED)",
+          "uniqueEffect": "DOUBLES wave damage",
+          "priorities": ["Maximum Life (perfect)", "Armor (perfect)", "Intelligence (perfect)"]
+        },
+        "push": {
+          "name": "Kessime's Legacy",
+          "type": "ANCIENT/PERFECT (+2 UPGRADED)",
+          "uniqueEffect": "DOUBLES wave damage",
+          "priorities": ["Maximum Life (PERFECT)", "Armor (PERFECT)", "Intelligence (PERFECT)"]
+        }
+      },
+      "boots": {
+        "starter": {
+          "name": "Tidal",
+          "type": "UNIQUE",
+          "aspect": "Tidal",
+          "priorities": ["Essence Regeneration", "Intelligence", "Movement Speed", "Maximum Life"]
+        },
+        "midgame": {
+          "name": "Tidal",
+          "type": "UNIQUE",
+          "aspect": "Tidal",
+          "priorities": ["Essence Regeneration (upgraded)", "Intelligence", "Movement Speed"]
+        },
+        "endgame": {
+          "name": "Tidal",
+          "type": "UNIQUE (+2 UPGRADED)",
+          "aspect": "Tidal",
+          "priorities": ["Essence Regeneration (perfect)", "Intelligence (perfect)", "Movement Speed (perfect)"]
+        },
+        "push": {
+          "name": "Tidal",
+          "type": "ANCIENT/PERFECT (+2 UPGRADED)",
+          "aspect": "Tidal",
+          "priorities": ["Essence Regeneration (PERFECT)", "Intelligence (PERFECT)", "Movement Speed (PERFECT)"]
+        }
+      },
+      "amulet": {
+        "starter": {
+          "name": "Thickened Blood",
+          "type": "MYTHIC UNIQUE",
+          "mythicEffect": "15% Chance to Restore +12 Primary Resource",
+          "priorities": ["Intelligence (maximize)", "Critical Strike Chance", "Attack Speed", "15% Chance to Restore +12 Primary Resource"]
+        },
+        "midgame": {
+          "name": "Thickened Blood",
+          "type": "MYTHIC UNIQUE",
+          "mythicEffect": "15% Chance to Restore +12 Primary Resource",
+          "note": "Damage & Balanced variants use Thickened Blood; Tank variant uses Bloodslick or Ancestral Knowledge; Push variant uses Thickened Blood (MANDATORY)",
+          "priorities": ["Intelligence (upgraded)", "Critical Strike Chance", "Attack Speed"]
+        },
+        "endgame": {
+          "name": "Thickened Blood (Damage/Balanced/Push) OR Bloodslick/Ancestral Knowledge (Tank)",
+          "type": "MYTHIC UNIQUE",
+          "priorities": ["Intelligence (perfect)", "Critical Strike Chance (perfect)", "Attack Speed (perfect)"]
+        },
+        "push": {
+          "name": "Thickened Blood",
+          "type": "MYTHIC UNIQUE (MANDATORY)",
+          "mythicEffect": "15% Chance to Restore +12 Primary Resource",
+          "priorities": ["Intelligence (PERFECT)", "Critical Strike Chance (PERFECT)", "Attack Speed (PERFECT)"]
+        }
+      },
+      "leftRing": {
+        "starter": {
+          "name": "Deluge",
+          "type": "UNIQUE",
+          "aspect": "Deluge - Resource management",
+          "priorities": ["Intelligence", "Critical Strike Chance", "Attack Speed", "Resource Cost Reduction", "Lucky Hit Chance"]
+        },
+        "midgame": {
+          "name": "Deluge",
+          "type": "UNIQUE",
+          "aspect": "Deluge",
+          "priorities": ["Intelligence (upgraded)", "Critical Strike Chance", "Attack Speed"]
+        },
+        "endgame": {
+          "name": "Deluge",
+          "type": "UNIQUE (+2 UPGRADED)",
+          "aspect": "Deluge",
+          "priorities": ["Intelligence (perfect)", "Critical Strike Chance (perfect)", "Attack Speed (perfect)"]
+        },
+        "push": {
+          "name": "Deluge",
+          "type": "ANCIENT/PERFECT (+2 UPGRADED)",
+          "aspect": "Deluge",
+          "priorities": ["Intelligence (PERFECT)", "Critical Strike Chance (PERFECT)", "Attack Speed (PERFECT)"]
+        }
+      },
+      "rightRing": {
+        "starter": {
+          "name": "Tides Blood",
+          "type": "UNIQUE",
+          "aspect": "Tides Blood - Blood skill synergy",
+          "priorities": ["Intelligence", "Critical Strike Chance", "Attack Speed", "Resource Cost Reduction", "Lucky Hit Chance"]
+        },
+        "midgame": {
+          "name": "Tides Blood",
+          "type": "UNIQUE",
+          "aspect": "Tides Blood",
+          "priorities": ["Intelligence (upgraded)", "Critical Strike Chance", "Attack Speed"]
+        },
+        "endgame": {
+          "name": "Tides Blood",
+          "type": "UNIQUE (+2 UPGRADED)",
+          "aspect": "Tides Blood",
+          "priorities": ["Intelligence (perfect)", "Critical Strike Chance (perfect)", "Attack Speed (perfect)"]
+        },
+        "push": {
+          "name": "Tides Blood",
+          "type": "ANCIENT/PERFECT (+2 UPGRADED)",
+          "aspect": "Tides Blood",
+          "priorities": ["Intelligence (PERFECT)", "Critical Strike Chance (PERFECT)", "Attack Speed (PERFECT)"]
+        }
+      },
+      "mainhand": {
+        "starter": {
+          "name": "Crushing",
+          "type": "UNIQUE",
+          "aspect": "x25% Critical Strike Damage Multiplier",
+          "priorities": ["Weapon Damage (MAXIMIZE THIS)", "x25% Critical Strike Damage Multiplier", "Maximum Life", "Intelligence"]
+        },
+        "midgame": {
+          "name": "Crushing",
+          "type": "UNIQUE",
+          "aspect": "x25% Critical Strike Damage Multiplier",
+          "priorities": ["Weapon Damage (PRIORITIZE)", "x25% Critical Strike Damage Multiplier", "Maximum Life"]
+        },
+        "endgame": {
+          "name": "Crushing",
+          "type": "UNIQUE (+2 UPGRADED)",
+          "aspect": "x25% Critical Strike Damage Multiplier",
+          "priorities": ["Weapon Damage (MAXIMIZED)", "x25% Critical Strike Damage Multiplier (perfect)", "Maximum Life (perfect)"]
+        },
+        "push": {
+          "name": "Crushing",
+          "type": "ANCIENT/PERFECT (+2 UPGRADED)",
+          "aspect": "x25% Critical Strike Damage Multiplier",
+          "priorities": ["Weapon Damage (PERFECT)", "x25% Critical Strike Damage Multiplier (perfect)", "Maximum Life (PERFECT)"]
+        }
+      },
+      "offhand": {
+        "starter": {
+          "name": "Coalesced Blood",
+          "type": "UNIQUE",
+          "aspect": "Coalesced Blood",
+          "priorities": ["Intelligence", "Critical Strike Chance", "Attack Speed"]
+        },
+        "midgame": {
+          "name": "Coalesced Blood",
+          "type": "UNIQUE",
+          "aspect": "Coalesced Blood",
+          "priorities": ["Intelligence (upgraded)", "Critical Strike Chance", "Attack Speed"]
+        },
+        "endgame": {
+          "name": "Coalesced Blood",
+          "type": "UNIQUE (+2 UPGRADED)",
+          "aspect": "Coalesced Blood",
+          "priorities": ["Intelligence (perfect)", "Critical Strike Chance (perfect)", "Attack Speed (perfect)"]
+        },
+        "push": {
+          "name": "Coalesced Blood",
+          "type": "ANCIENT/PERFECT (+2 UPGRADED)",
+          "aspect": "Coalesced Blood",
+          "priorities": ["Intelligence (PERFECT)", "Critical Strike Chance (PERFECT)", "Attack Speed (PERFECT)"]
+        }
+      },
+      "seal": {
+        "starter": {
+          "name": "Maximum Life & +1 Charm Slot",
+          "type": "SEAL",
+          "effects": "Maximum Life + 1 Charm Slot",
+          "priorities": ["Maximum Life", "+1 Charm Slot (MANDATORY)", "Armor", "Intelligence"]
+        },
+        "midgame": {
+          "name": "Maximum Life & +1 Charm Slot",
+          "type": "SEAL",
+          "effects": "Maximum Life + 1 Charm Slot",
+          "priorities": ["Maximum Life (upgraded)", "+1 Charm Slot (MANDATORY)", "Armor"]
+        },
+        "endgame": {
+          "name": "Maximum Life & +1 Charm Slot",
+          "type": "SEAL",
+          "effects": "Maximum Life + 1 Charm Slot",
+          "priorities": ["Maximum Life (perfect)", "+1 Charm Slot (MANDATORY)", "Armor (perfect)"]
+        },
+        "push": {
+          "name": "Maximum Life & +1 Charm Slot",
+          "type": "SEAL (ANCIENT/PERFECT)",
+          "effects": "Maximum Life + 1 Charm Slot",
+          "priorities": ["Maximum Life (PERFECT)", "+1 Charm Slot (MANDATORY)", "Armor (PERFECT)"]
+        }
+      },
+      "charms": {
+        "starter": [
+          {
+            "slot": "Charm 1-3",
+            "name": "Ranks to Blood Skills",
+            "type": "CHARM",
+            "priorities": ["+Ranks to Blood Skills (maximize)", "Intelligence", "Critical Strike Chance"]
+          }
+        ],
+        "midgame": [
+          {
+            "slot": "Charm 1-3",
+            "name": "Ranks to Blood Skills",
+            "type": "CHARM",
+            "priorities": ["+Ranks to Blood Skills (maximize)", "Intelligence", "Attack Speed"]
+          }
+        ],
+        "endgame": [
+          {
+            "slot": "Charm 1-3",
+            "name": "Ranks to Blood Skills",
+            "type": "CHARM",
+            "priorities": ["+Ranks to Blood Skills (PERFECT)", "Intelligence (perfect)", "Attack Speed (perfect)"]
+          }
+        ],
+        "push": [
+          {
+            "slot": "Charm 1-3",
+            "name": "Ranks to Blood Skills",
+            "type": "CHARM (ANCIENT/PERFECT)",
+            "priorities": ["+Ranks to Blood Skills (PERFECT)", "Intelligence (PERFECT)", "Attack Speed (PERFECT)"]
+          }
+        ]
+      }
+    },
+    "mandatoryUniques": [
+      "Hardened Bones (Helm)",
+      "Juggernaut's (Chest)",
+      "Rathma's Chosen (Gloves)",
+      "Kessime's Legacy (Pants)",
+      "Tidal (Boots)",
+      "Thickened Blood (Mythic Amulet)",
+      "Deluge (Left Ring)",
+      "Tides Blood (Right Ring)",
+      "Crushing (Mainhand)",
+      "Coalesced Blood (Offhand)"
+    ],
+    "keyPowerSpikes": [
+      {
+        "stage": "Starter",
+        "priority": "Kessime's Legacy pants - DOUBLES wave damage"
+      },
+      {
+        "stage": "Midgame",
+        "priority": "All unique pieces obtained + upgraded"
+      },
+      {
+        "stage": "Endgame",
+        "priority": "Perfect rolls on all pieces"
+      },
+      {
+        "stage": "Push",
+        "priority": "Ancient/Perfect gear with maximum stat rolls"
+      }
+    ]
+  }
+}
