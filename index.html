@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blood Wave Necromancer - Enhanced Build Guide</title>
+    <title>Blood Wave Necromancer - Complete Build Guide</title>
     <style>
         * {
             margin: 0;
@@ -61,11 +61,45 @@
             color: #0a0e27;
         }
 
+        .stage-nav {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .stage-btn {
+            padding: 10px 20px;
+            background-color: #1a1f3a;
+            border: 2px solid #ffaa44;
+            color: #ffaa44;
+            cursor: pointer;
+            font-size: 0.9em;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .stage-btn:hover,
+        .stage-btn.active {
+            background-color: #ffaa44;
+            color: #0a0e27;
+        }
+
         .page-content {
             display: none;
         }
 
         .page-content.active {
+            display: block;
+        }
+
+        .stage-content {
+            display: none;
+        }
+
+        .stage-content.active {
             display: block;
         }
 
@@ -83,6 +117,131 @@
             margin-top: 15px;
             margin-bottom: 10px;
             font-size: 1.3em;
+        }
+
+        .intro-text {
+            background-color: #1a1f3a;
+            padding: 15px;
+            border-left: 4px solid #ff4444;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .intro-text p {
+            margin-bottom: 8px;
+        }
+
+        .intro-text strong {
+            color: #ff7744;
+        }
+
+        .gear-section, .skill-section {
+            background-color: #1a1f3a;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #ff7744;
+        }
+
+        .gear-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #2a3050;
+        }
+
+        .gear-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .gear-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .gear-slot {
+            color: #ffaa44;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .gear-name {
+            color: #ff7744;
+            font-size: 1.05em;
+            font-weight: bold;
+        }
+
+        .gear-type {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .mythic-badge {
+            background-color: #8b00ff;
+            color: #fff;
+        }
+
+        .unique-badge {
+            background-color: #ff8800;
+            color: #000;
+        }
+
+        .aspect-box {
+            background-color: #2a1f1a;
+            border-left: 3px solid #ff7744;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 3px;
+        }
+
+        .aspect-box strong {
+            color: #ff7744;
+        }
+
+        .aspect-box em {
+            color: #ffaa44;
+        }
+
+        .roll-emphasis {
+            background-color: #1a2a1a;
+            border-left: 3px solid #44ff44;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 3px;
+            font-style: italic;
+            color: #90ee90;
+        }
+
+        .stat-priority, .skill-list {
+            list-style: none;
+            margin-top: 8px;
+            margin-left: 20px;
+        }
+
+        .stat-priority li, .skill-list li {
+            color: #b0b0b0;
+            margin: 4px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .stat-priority li:before, .skill-list li:before {
+            content: "▸";
+            color: #ff4444;
+            position: absolute;
+            left: 0;
+        }
+
+        .stat-priority li strong, .skill-list li strong {
+            color: #ffaa44;
         }
 
         .skill-tree-table {
@@ -114,10 +273,6 @@
         .skill-name {
             color: #ffaa44;
             font-weight: bold;
-        }
-
-        .skill-type {
-            color: #ff7744;
         }
 
         .points-needed {
@@ -173,6 +328,7 @@
             white-space: pre;
             overflow-x: auto;
             color: #ffaa44;
+            font-size: 0.85em;
         }
 
         .stage-label {
@@ -185,11 +341,6 @@
             font-size: 0.85em;
             font-weight: bold;
         }
-
-        .starter-stage { background-color: #4444ff; }
-        .midgame-stage { background-color: #ffaa44; }
-        .endgame-stage { background-color: #44ff44; }
-        .push-stage { background-color: #ff4444; }
 
         .key-notes {
             background-color: #2a1a1a;
@@ -218,6 +369,38 @@
         .key-notes li:before {
             content: "✦";
             color: #ff7744;
+            position: absolute;
+            left: 0;
+        }
+
+        .stat-targets {
+            background-color: #1a2a1a;
+            border-left: 4px solid #44ff44;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .stat-targets h3 {
+            color: #44ff44;
+            margin-top: 0;
+        }
+
+        .stat-targets ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .stat-targets li {
+            margin: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #b0b0b0;
+        }
+
+        .stat-targets li:before {
+            content: "◆";
+            color: #44ff44;
             position: absolute;
             left: 0;
         }
@@ -273,6 +456,11 @@
             font-weight: bold;
         }
 
+        .warning {
+            color: #ffaa44;
+            font-weight: bold;
+        }
+
         .image-placeholder {
             background: linear-gradient(135deg, #1a1f3a 0%, #2a3050 100%);
             border: 2px dashed #ff4444;
@@ -281,39 +469,289 @@
             text-align: center;
             color: #ffaa44;
             margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .board-row {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Blood Wave Necromancer<br>Enhanced Build Guide</h1>
-        <p style="text-align: center; color: #ffaa44; margin-bottom: 20px;">Diablo IV Season 15 - Hell's Legacy | Skill Tree & Paragon Boards</p>
+        <h1>Blood Wave Necromancer<br>Complete Build Guide</h1>
+        <p style="text-align: center; color: #ffaa44; margin-bottom: 20px;">Diablo IV Season 15 - Hell's Legacy | Gear • Skills • Paragon</p>
 
         <div class="page-nav">
-            <button class="page-btn active" onclick="switchPage('skills')">🔥 Skills & Tree</button>
-            <button class="page-btn" onclick="switchPage('paragon')">✨ Paragon Boards</button>
+            <button class="page-btn active" onclick="switchPage('gear')">⚔ Gear</button>
+            <button class="page-btn" onclick="switchPage('skills')">🔥 Skills</button>
+            <button class="page-btn" onclick="switchPage('paragon')">✨ Paragon</button>
+        </div>
+
+        <!-- ===== GEAR PAGE ===== -->
+        <div id="gear" class="page-content active">
+            <div class="stage-nav">
+                <button class="stage-btn active" onclick="switchStage('starter')">Starter</button>
+                <button class="stage-btn" onclick="switchStage('midgame')">Midgame</button>
+                <button class="stage-btn" onclick="switchStage('endgame')">Endgame</button>
+                <button class="stage-btn" onclick="switchStage('push')">Push</button>
+            </div>
+
+            <!-- STARTER GEAR -->
+            <div id="starter" class="stage-content active">
+                <h2>STARTER Gear (Torment 1-4)</h2>
+                <div class="intro-text">
+                    <p><strong>Focus:</strong> Survival, Resource Management & Acquiring Mandatory Uniques</p>
+                    <p><strong>Key Goal:</strong> Get all UNIQUE pieces + acquire Kessime's Legacy power spike</p>
+                </div>
+
+                <div class="key-notes">
+                    <h3>Critical Requirements</h3>
+                    <ul>
+                        <li>⚠️ <span class="emphasis">ALL of these UNIQUE pieces are MANDATORY:</span></li>
+                        <li>Hardened Bones (Helm) • Juggernaut's (Chest) • Rathma's Chosen (Gloves)</li>
+                        <li>Kessime's Legacy (Pants) • Tidal (Boots) • Thickened Blood (MYTHIC Amulet)</li>
+                        <li>Deluge (Left Ring) • Tides Blood (Right Ring) • Crushing (Mainhand) • Coalesced Blood (Offhand)</li>
+                    </ul>
+                </div>
+
+                <div class="gear-section">
+                    <h3>Starter Gear Allocations</h3>
+
+                    <div class="gear-item">
+                        <div class="gear-header">
+                            <div><div class="gear-slot">⚔ Helm</div><div class="gear-name">Hardened Bones</div></div>
+                            <span class="gear-type unique-badge">UNIQUE</span>
+                        </div>
+                        <div class="aspect-box">
+                            <strong>Aspect:</strong> <em>Hardened Bones</em> - Damage Reduction + Corpse Generation<br>
+                            <strong>Critical:</strong> This aspect MUST be on your helm
+                        </div>
+                        <div class="roll-emphasis">🎲 Rolls: Get decent Essence Regeneration roll on this piece (5+ minimum)</div>
+                        <ul class="stat-priority">
+                            <li><strong>1.</strong> Essence Regeneration (5+ minimum)</li>
+                            <li><strong>2.</strong> Resource Cost Reduction</li>
+                            <li><strong>3.</strong> Maximum Life</li>
+                            <li><strong>4.</strong> Armor</li>
+                            <li><strong>5.</strong> Intelligence</li>
+                        </ul>
+                    </div>
+
+                    <div class="gear-item">
+                        <div class="gear-header">
+                            <div><div class="gear-slot">⚔ Chest</div><div class="gear-name">Juggernaut's</div></div>
+                            <span class="gear-type unique-badge">UNIQUE</span>
+                        </div>
+                        <div class="aspect-box">
+                            <strong>Aspect:</strong> <em>Juggernaut's</em> - Toughness boost (up by default)<br>
+                            <strong>Critical:</strong> One of the best toughness aspects
+                        </div>
+                        <div class="roll-emphasis">🎲 Rolls: High Essence Regeneration roll is key</div>
+                        <ul class="stat-priority">
+                            <li><strong>1.</strong> Essence Regeneration (5+ minimum)</li>
+                            <li><strong>2.</strong> Resource Cost Reduction</li>
+                            <li><strong>3.</strong> Maximum Life</li>
+                            <li><strong>4.</strong> Armor</li>
+                            <li><strong>5.</strong> Intelligence</li>
+                        </ul>
+                    </div>
+
+                    <div class="gear-item">
+                        <div class="gear-header">
+                            <div><div class="gear-slot">⚔ Pants</div><div class="gear-name">Kessime's Legacy</div></div>
+                            <span class="gear-type unique-badge">UNIQUE</span>
+                        </div>
+                        <div class="aspect-box">
+                            <strong>Unique Effect:</strong> <em>DOUBLES wave damage (two waves from both sides)</em><br>
+                            <strong>Critical:</strong> POWER SPIKE - farm/gamble for this FIRST
+                        </div>
+                        <div class="roll-emphasis">🎲 Rolls: Any decent roll works - the unique effect is what matters most</div>
+                        <ul class="stat-priority">
+                            <li><strong>1.</strong> Maximum Life</li>
+                            <li><strong>2.</strong> Armor</li>
+                            <li><strong>3.</strong> Intelligence</li>
+                            <li><strong>4.</strong> Unique Effect (MANDATORY)</li>
+                        </ul>
+                    </div>
+
+                    <div class="gear-item">
+                        <div class="gear-header">
+                            <div><div class="gear-slot">⚔ Amulet</div><div class="gear-name">Thickened Blood</div></div>
+                            <span class="gear-type mythic-badge">MYTHIC UNIQUE</span>
+                        </div>
+                        <div class="aspect-box">
+                            <strong>Mythic Effect:</strong> <em>15% Chance to Restore +12 Primary Resource</em><br>
+                            <strong>Critical:</strong> This resource restoration is essential
+                        </div>
+                        <div class="roll-emphasis">🎲 Rolls: Intelligence roll on mythic is HIGHEST priority</div>
+                        <ul class="stat-priority">
+                            <li><strong>1.</strong> Intelligence (maximize this roll)</li>
+                            <li><strong>2.</strong> Critical Strike Chance</li>
+                            <li><strong>3.</strong> Attack Speed</li>
+                            <li><strong>4.</strong> 15% Chance to Restore +12 Primary Resource</li>
+                        </ul>
+                    </div>
+
+                    <div class="gear-item">
+                        <div class="gear-header">
+                            <div><div class="gear-slot">⚔ Mainhand</div><div class="gear-name">Crushing</div></div>
+                            <span class="gear-type unique-badge">UNIQUE</span>
+                        </div>
+                        <div class="aspect-box">
+                            <strong>Aspect:</strong> <em>x25% Critical Strike Damage Multiplier</em><br>
+                            <strong>Critical:</strong> Your DPS source - imprint this aspect
+                        </div>
+                        <div class="roll-emphasis">⚡ WEAPON DAMAGE ROLL IS CRITICAL - get highest damage possible</div>
+                        <ul class="stat-priority">
+                            <li><strong>1.</strong> Weapon Damage (MAXIMIZE THIS)</li>
+                            <li><strong>2.</strong> x25% Critical Strike Damage Multiplier</li>
+                            <li><strong>3.</strong> Maximum Life</li>
+                            <li><strong>4.</strong> Intelligence</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="stat-targets">
+                    <h3>Starter Stat Targets</h3>
+                    <ul>
+                        <li>Critical Strike Chance: 30-40%</li>
+                        <li>Essence Regeneration: 10-12 (minimum - non-negotiable)</li>
+                        <li>Resource Cost Reduction: >18%</li>
+                        <li>Attack Speed: >50% (with Ferocity stacks)</li>
+                        <li>Maximum Life: 500+</li>
+                        <li>Armor: Capped or near-capped</li>
+                    </ul>
+                </div>
+
+                <div class="tips-list">
+                    <h3>Starter Acquisition Strategy</h3>
+                    <ul>
+                        <li><span class="emphasis">PRIORITY #1:</span> Farm/gamble Kessime's Legacy pants FIRST</li>
+                        <li><span class="emphasis">PRIORITY #2:</span> Collect all mandatory UNIQUE pieces</li>
+                        <li><span class="emphasis">PRIORITY #3:</span> Get proper aspects imprinted</li>
+                        <li>Don't worry about perfect rolls - just get the pieces</li>
+                        <li>Once you have Kessime's Legacy, the build's power multiplies significantly</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MIDGAME GEAR -->
+            <div id="midgame" class="stage-content">
+                <h2>MIDGAME Gear (Torment 5-8)</h2>
+                <div class="intro-text">
+                    <p><strong>Focus:</strong> Upgrading Rolls on Uniques + Applying Tempers</p>
+                    <p><strong>Key Goal:</strong> All UNIQUES obtained - now optimize ROLL QUALITY</p>
+                </div>
+
+                <div class="gear-section">
+                    <h3>Midgame Upgrade Strategy</h3>
+                    <ul class="stat-priority">
+                        <li><strong>All Pieces:</strong> Farm for +2 upgraded versions with better rolls</li>
+                        <li><strong>Jewelry:</strong> Apply 3x "Lucky Hit Chance: Restore Resource" tempers (MANDATORY)</li>
+                        <li><strong>Helm/Chest:</strong> Upgrade Essence Regeneration rolls (maintain 10-12)</li>
+                        <li><strong>Weapons:</strong> Upgrade mainhand weapon damage (direct DPS increase - PRIORITIZE)</li>
+                        <li><strong>Goal:</strong> 60-70% Critical Strike Chance total</li>
+                    </ul>
+                </div>
+
+                <div class="stat-targets">
+                    <h3>Midgame Stat Targets</h3>
+                    <ul>
+                        <li>Critical Strike Chance: 60-70%</li>
+                        <li>Attack Speed: 30-40%</li>
+                        <li>Essence Regeneration: 10-12 (stable)</li>
+                        <li>Resource Cost Reduction: 20%+</li>
+                        <li>Maximum Life: 700+</li>
+                        <li>3x "Lucky Hit: Restore Resource" on jewelry (MANDATORY)</li>
+                    </ul>
+                </div>
+
+                <div class="tips-list">
+                    <h3>Midgame Strategy</h3>
+                    <ul>
+                        <li>Farm Tempers aggressively - 3x "Lucky Hit" on jewelry MANDATORY</li>
+                        <li>Weapon damage upgrades = direct DPS increase (PRIORITIZE)</li>
+                        <li>Target farm Nightmare Dungeons for +2 upgraded gear</li>
+                        <li>Mainhand weapon is #1 farming target</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ENDGAME GEAR -->
+            <div id="endgame" class="stage-content">
+                <h2>ENDGAME Gear (Torment 9-12)</h2>
+                <div class="intro-text">
+                    <p><strong>Focus:</strong> Perfect Rolls Across All Pieces</p>
+                    <p><strong>Key Goal:</strong> Every gear piece has OPTIMIZED rolls + tempers</p>
+                </div>
+
+                <div class="key-notes">
+                    <h3>Endgame Requirements</h3>
+                    <ul>
+                        <li>🎲 All pieces need HIGH/PERFECT rolls - no low-roll pieces</li>
+                        <li>💎 All gear pieces should be +2 upgraded or better</li>
+                        <li>⚔ All aspects verified and correctly imprinted</li>
+                        <li>🔥 Weapon damage rolls become increasingly critical</li>
+                        <li>Critical Strike Chance: 80-90% total</li>
+                    </ul>
+                </div>
+
+                <div class="stat-targets">
+                    <h3>Endgame Stat Targets (T12 Ready)</h3>
+                    <ul>
+                        <li>Critical Strike Chance: 80-90%</li>
+                        <li>Attack Speed: 50%+ (with Ferocity stacks)</li>
+                        <li>Essence Regeneration: 12+ (stable, high rolls)</li>
+                        <li>Resource Cost Reduction: 20%+</li>
+                        <li>All resistances: Capped (70%)</li>
+                        <li>Armor: Capped or overcapped</li>
+                        <li>Maximum Life: 1000+</li>
+                        <li>Weapon Damage: MAXIMIZED on Crushing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PUSH GEAR -->
+            <div id="push" class="stage-content">
+                <h2>PUSH Gear (Torment 13+)</h2>
+                <div class="intro-text">
+                    <p><strong>Focus:</strong> Absolute Perfection in Every Stat</p>
+                    <p><strong>Key Goal:</strong> Ancient/Perfect gear with MAXIMUM rolls - no compromises</p>
+                </div>
+
+                <div class="key-notes">
+                    <h3>Push Requirements</h3>
+                    <ul>
+                        <li>💎 ONLY Ancient/Perfect quality pieces</li>
+                        <li>🎲 ONLY maximum or near-maximum rolls on every stat</li>
+                        <li>⚔ Every temper slot optimized - zero mediocre tempers</li>
+                        <li>🔥 Weapon damage is sacred - farm relentlessly for max rolls</li>
+                        <li>Critical Strike Chance: 95-100% (MANDATORY)</li>
+                    </ul>
+                </div>
+
+                <div class="stat-targets">
+                    <h3>Push Stat Targets (Tier 13+)</h3>
+                    <ul>
+                        <li>Critical Strike Chance: 95-100%</li>
+                        <li>Attack Speed: 60%+ (with Ferocity stacks)</li>
+                        <li>Essence Regeneration: 12-15 (maximize)</li>
+                        <li>All resistances: Capped (70%)</li>
+                        <li>Armor: Capped or overcapped</li>
+                        <li>Damage Reduction: 10-15% (on gear)</li>
+                        <li>Maximum Life: 1200+</li>
+                        <li>Weapon Damage: MAXIMIZED (Ancient/Perfect)</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <!-- ===== SKILLS PAGE ===== -->
-        <div id="skills" class="page-content active">
+        <div id="skills" class="page-content">
             <h2>Skill Tree & Allocations</h2>
             <p style="color: #ffaa44; margin-bottom: 20px;">Blood Wave Necromancer Skill Tree with Point Requirements</p>
-
-            <div class="key-notes">
-                <h3>Skill Allocation Strategy</h3>
-                <ul>
-                    <li>Start by maxing out core damage skills (Blood Wave tree)</li>
-                    <li>Then invest in survivability (Bone skills for Iron Maiden, Reap)</li>
-                    <li>Then mobility and utility (Sever, Blood Mist)</li>
-                    <li>Finally, optimize enhancement nodes for maximum damage</li>
-                </ul>
-            </div>
-
-            <div class="image-placeholder">
-                📸 Skill Tree Diagram<br><br>
-                [For visual reference, check the Skill Tree on Maxroll.gg or D4 Build Planner]<br>
-                Reference: https://maxroll.gg/d4/build-guides/blood-wave-necromancer-guide
-            </div>
 
             <h3>Core Blood Skills (PRIORITY)</h3>
             <table class="skill-tree-table">
@@ -328,31 +766,31 @@
                 <tbody>
                     <tr>
                         <td class="skill-name">Blood Wave</td>
-                        <td class="skill-type">Core Skill</td>
+                        <td>Core Skill</td>
                         <td class="points-needed">5 pts</td>
                         <td>Your main damage - max this first</td>
                     </tr>
                     <tr>
                         <td class="skill-name">Blood Surge</td>
-                        <td class="skill-type">Blood Skill</td>
+                        <td>Blood Skill</td>
                         <td class="points-needed">3 pts</td>
                         <td>Enhancement for blood skills</td>
                     </tr>
                     <tr>
                         <td class="skill-name">Hemorrhage</td>
-                        <td class="skill-type">Blood Skill</td>
+                        <td>Blood Skill</td>
                         <td class="points-needed">3 pts</td>
                         <td>Critical chance increase</td>
                     </tr>
                     <tr>
                         <td class="skill-name">Blood Mist</td>
-                        <td class="skill-type">Blood Skill</td>
+                        <td>Blood Skill</td>
                         <td class="points-needed">3 pts</td>
                         <td>Corpse consumer + teleport</td>
                     </tr>
                     <tr>
                         <td class="skill-name">Blood Lance</td>
-                        <td class="skill-type">Blood Skill</td>
+                        <td>Blood Skill</td>
                         <td class="points-needed">3 pts</td>
                         <td>OP stack consumer</td>
                     </tr>
@@ -372,33 +810,27 @@
                 <tbody>
                     <tr>
                         <td class="skill-name">Reap</td>
-                        <td class="skill-type">Bone Skill</td>
+                        <td>Bone Skill</td>
                         <td class="points-needed">5 pts</td>
                         <td>Resource recovery - essential</td>
                     </tr>
                     <tr>
                         <td class="skill-name">Iron Maiden</td>
-                        <td class="skill-type">Bone Skill</td>
+                        <td>Bone Skill</td>
                         <td class="points-needed">5 pts</td>
                         <td>Automated by Teb rune</td>
                     </tr>
                     <tr>
                         <td class="skill-name">Bone Prison</td>
-                        <td class="skill-type">Bone Skill</td>
+                        <td>Bone Skill</td>
                         <td class="points-needed">5 pts</td>
                         <td>Attack speed boost</td>
                     </tr>
                     <tr>
                         <td class="skill-name">Bone Armor</td>
-                        <td class="skill-type">Bone Skill</td>
+                        <td>Bone Skill</td>
                         <td class="points-needed">3 pts</td>
                         <td>Survivability layer</td>
-                    </tr>
-                    <tr>
-                        <td class="skill-name">Decompose</td>
-                        <td class="skill-type">Bone Skill</td>
-                        <td class="points-needed">1 pt</td>
-                        <td>Corpse gen option</td>
                     </tr>
                 </tbody>
             </table>
@@ -416,53 +848,15 @@
                 <tbody>
                     <tr>
                         <td class="skill-name">Sever</td>
-                        <td class="skill-type">Reaper Skill</td>
+                        <td>Reaper Skill</td>
                         <td class="points-needed">5 pts</td>
                         <td>Teleport + corpse gen - essential</td>
                     </tr>
                     <tr>
                         <td class="skill-name">Serration</td>
-                        <td class="skill-type">Reaper Skill</td>
+                        <td>Reaper Skill</td>
                         <td class="points-needed">3 pts</td>
                         <td>Enhanced mobility</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Enhancement Nodes</h3>
-            <table class="skill-tree-table">
-                <thead>
-                    <tr>
-                        <th>Node</th>
-                        <th>Type</th>
-                        <th>Points Needed</th>
-                        <th>Priority</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="skill-name">+20% Critical Strike Damage</td>
-                        <td class="skill-type">Passive</td>
-                        <td class="points-needed">3 pts</td>
-                        <td class="success">HIGH</td>
-                    </tr>
-                    <tr>
-                        <td class="skill-name">+15% Attack Speed</td>
-                        <td class="skill-type">Passive</td>
-                        <td class="points-needed">2 pts</td>
-                        <td class="success">HIGH</td>
-                    </tr>
-                    <tr>
-                        <td class="skill-name">+10% Damage vs Elites</td>
-                        <td class="skill-type">Passive</td>
-                        <td class="points-needed">2 pts</td>
-                        <td class="emphasis">MEDIUM</td>
-                    </tr>
-                    <tr>
-                        <td class="skill-name">+10% Maximum Life</td>
-                        <td class="skill-type">Passive</td>
-                        <td class="points-needed">3 pts</td>
-                        <td class="success">HIGH</td>
                     </tr>
                 </tbody>
             </table>
@@ -473,9 +867,8 @@
                     <li><strong>Step 1:</strong> Max Blood Wave (5 pts)</li>
                     <li><strong>Step 2:</strong> Max Reap (5 pts) + Iron Maiden (5 pts)</li>
                     <li><strong>Step 3:</strong> Max Sever (5 pts) + Blood Mist (3 pts)</li>
-                    <li><strong>Step 4:</strong> Add blood skill enhancements (Hemorrhage, etc.)</li>
-                    <li><strong>Step 5:</strong> Fill in critical damage and attack speed nodes</li>
-                    <li><strong>Step 6:</strong> Add survivability (Bone Armor, max life nodes)</li>
+                    <li><strong>Step 4:</strong> Add blood skill enhancements</li>
+                    <li><strong>Step 5:</strong> Fill in critical damage nodes</li>
                 </ul>
             </div>
         </div>
@@ -483,13 +876,12 @@
         <!-- ===== PARAGON PAGE ===== -->
         <div id="paragon" class="page-content">
             <h2>Paragon Boards Progression</h2>
-            <p style="color: #ffaa44; margin-bottom: 20px;">Visual Board Layout with Glyphs and Progression Paths</p>
+            <p style="color: #ffaa44; margin-bottom: 20px;">Board Layouts with Glyphs and Progression Paths</p>
 
             <div class="key-notes">
                 <h3>Critical Note</h3>
                 <ul>
                     <li><span class="emphasis">Must level Essence Glyph to 50 FIRST</span> before activating Essence board</li>
-                    <li>This gates your progression - prioritize Essence early</li>
                 </ul>
             </div>
 
@@ -499,24 +891,23 @@
                     <div class="board-info">
                         <div class="board-name">🎯 DOMINATE</div>
                         <div class="glyph-info">Glyph: <strong>Dominate</strong></div>
-                        <p style="margin-top: 10px; color: #b0b0b0;">Increases damage from your skills. Core damage multiplier for Blood Wave.</p>
+                        <p style="margin-top: 10px; color: #b0b0b0;">Increases damage from your skills. Core damage multiplier.</p>
                         <div style="margin-top: 10px;">
-                            <span class="stage-label starter-stage">STARTER</span>
+                            <span class="stage-label">STARTER</span>
                             <p style="margin-top: 8px; font-size: 0.9em; color: #b0b0b0;">Start here • Priority: Attack Speed, Crit Damage</p>
                         </div>
                     </div>
-                    <div class="board-diagram">
-        [Board Layout]
-    ┌─────────────────┐
-    │   ◆ Glyph ◆    │
-    │   (Dominate)   │
-    ├─────────────────┤
-    │ ⚡ AtkSpd  ◆ Crit│
-    │  │         │   │
-    │ Life ─ ◆ ─ Dmg │
-    │  │         │   │
-    │ ◆ ─── ◆ ─ ◆   │
-    └─────────────────┘
+                    <div class="board-diagram">    [DOMINATE BOARD]
+┌─────────────────┐
+│   ◆ Glyph ◆    │
+│  (Dominate)    │
+├─────────────────┤
+│ ⚡ AtkSpd  ◆ Crit
+│  │         │   │
+│ Life ─ ◆ ─ Dmg │
+│  │         │   │
+│ ◆ ─── ◆ ─ ◆   │
+└─────────────────┘
                     </div>
                 </div>
             </div>
@@ -527,24 +918,23 @@
                     <div class="board-info">
                         <div class="board-name">💎 ESSENCE</div>
                         <div class="glyph-info">Glyph: <strong>Essence</strong></div>
-                        <p style="margin-top: 10px; color: #b0b0b0;">Life and general scaling. MUST reach glyph level 50 to unlock board.</p>
+                        <p style="margin-top: 10px; color: #b0b0b0;">Life and general scaling. MUST reach glyph level 50.</p>
                         <div style="margin-top: 10px;">
-                            <span class="stage-label midgame-stage">MIDGAME</span>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #b0b0b0;">Unlock after glyph 50+ • Priority: Life nodes, survivability</p>
+                            <span class="stage-label" style="background-color: #ffaa44;">MIDGAME</span>
+                            <p style="margin-top: 8px; font-size: 0.9em; color: #b0b0b0;">Unlock after glyph 50+ • Priority: Life</p>
                         </div>
                     </div>
-                    <div class="board-diagram">
-        [Board Layout]
-    ┌─────────────────┐
-    │   ◆ Glyph ◆    │
-    │   (Essence)    │
-    ├─────────────────┤
-    │ Life  ◆   ◆  ◆ │
-    │  │      │  │  │
-    │ ◆ ─ Life ─ ◆  │
-    │  │      │  │  │
-    │ Armor ─◆─ Life │
-    └─────────────────┘
+                    <div class="board-diagram">    [ESSENCE BOARD]
+┌─────────────────┐
+│   ◆ Glyph ◆    │
+│   (Essence)    │
+├─────────────────┤
+│ Life  ◆   ◆  ◆ │
+│  │      │  │  │
+│ ◆ ─ Life ─ ◆  │
+│  │      │  │  │
+│ Armor ─◆─ Life │
+└─────────────────┘
                     </div>
                 </div>
             </div>
@@ -555,24 +945,23 @@
                     <div class="board-info">
                         <div class="board-name">💀 GRAVEKEEPER</div>
                         <div class="glyph-info">Glyph: <strong>Gravekeeper</strong></div>
-                        <p style="margin-top: 10px; color: #b0b0b0;">Corpse and Bone skill synergy. Supports teleport rotation.</p>
+                        <p style="margin-top: 10px; color: #b0b0b0;">Corpse and Bone skill synergy.</p>
                         <div style="margin-top: 10px;">
-                            <span class="stage-label endgame-stage">ENDGAME</span>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #b0b0b0;">Unlock mid-endgame • Priority: Corpse gen, bone skill damage</p>
+                            <span class="stage-label" style="background-color: #44ff44; color: #000;">ENDGAME</span>
+                            <p style="margin-top: 8px; font-size: 0.9em; color: #b0b0b0;">Unlock mid-endgame • Priority: Corpse/Bone</p>
                         </div>
                     </div>
-                    <div class="board-diagram">
-        [Board Layout]
-    ┌─────────────────┐
-    │   ◆ Glyph ◆    │
-    │  (Gravekeeper) │
-    ├─────────────────┤
-    │ Corpse ◆ Bone  │
-    │  │      │  │   │
-    │ ◆ ─ Damage ─ ◆│
-    │  │      │  │   │
-    │Life ─◆─ Life  │
-    └─────────────────┘
+                    <div class="board-diagram">  [GRAVEKEEPER BOARD]
+┌─────────────────┐
+│   ◆ Glyph ◆    │
+│ (Gravekeeper)  │
+├─────────────────┤
+│ Corpse ◆ Bone  │
+│  │      │  │   │
+│ ◆ ─ Damage ─ ◆│
+│  │      │  │   │
+│Life ─◆─ Life  │
+└─────────────────┘
                     </div>
                 </div>
             </div>
@@ -583,24 +972,23 @@
                     <div class="board-info">
                         <div class="board-name">🩸 IMBIBER</div>
                         <div class="glyph-info">Glyph: <strong>Imbiber</strong></div>
-                        <p style="margin-top: 10px; color: #b0b0b0;">Blood skill synergy and healing. Supports Blood Wave and Blood Mist.</p>
+                        <p style="margin-top: 10px; color: #b0b0b0;">Blood skill synergy and healing.</p>
                         <div style="margin-top: 10px;">
-                            <span class="stage-label endgame-stage">ENDGAME</span>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #b0b0b0;">Unlock late-endgame • Priority: Blood skill damage, healing</p>
+                            <span class="stage-label" style="background-color: #44ff44; color: #000;">ENDGAME</span>
+                            <p style="margin-top: 8px; font-size: 0.9em; color: #b0b0b0;">Unlock late-endgame • Priority: Blood skills</p>
                         </div>
                     </div>
-                    <div class="board-diagram">
-        [Board Layout]
-    ┌─────────────────┐
-    │   ◆ Glyph ◆    │
-    │   (Imbiber)    │
-    ├─────────────────┤
-    │Blood ◆  Heal   │
-    │  │      │  │   │
-    │ ◆ ─ Crit ─ ◆  │
-    │  │      │  │   │
-    │Life ─◆─ Dmg   │
-    └─────────────────┘
+                    <div class="board-diagram">    [IMBIBER BOARD]
+┌─────────────────┐
+│   ◆ Glyph ◆    │
+│   (Imbiber)    │
+├─────────────────┤
+│Blood ◆  Heal   │
+│  │      │  │   │
+│ ◆ ─ Crit ─ ◆  │
+│  │      │  │   │
+│Life ─◆─ Dmg   │
+└─────────────────┘
                     </div>
                 </div>
             </div>
@@ -611,60 +999,41 @@
                     <div class="board-info">
                         <div class="board-name">⚙ CORPOREAL</div>
                         <div class="glyph-info">Glyph: <strong>Corporeal</strong></div>
-                        <p style="margin-top: 10px; color: #b0b0b0;">Utility and final scaling. Capstone board for maximum optimization.</p>
+                        <p style="margin-top: 10px; color: #b0b0b0;">Utility and final scaling. Capstone board.</p>
                         <div style="margin-top: 10px;">
-                            <span class="stage-label push-stage">PUSH</span>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #b0b0b0;">Unlock for push • Priority: Damage scaling, optimization</p>
+                            <span class="stage-label" style="background-color: #ff4444;">PUSH</span>
+                            <p style="margin-top: 8px; font-size: 0.9em; color: #b0b0b0;">Unlock for push • Priority: Optimization</p>
                         </div>
                     </div>
-                    <div class="board-diagram">
-        [Board Layout]
-    ┌─────────────────┐
-    │   ◆ Glyph ◆    │
-    │  (Corporeal)   │
-    ├─────────────────┤
-    │Dmg ◆  Crit     │
-    │  │      │  │   │
-    │ ◆ ─ AtkSpd ─ ◆│
-    │  │      │  │   │
-    │◆ ──◆── Life   │
-    └─────────────────┘
+                    <div class="board-diagram">  [CORPOREAL BOARD]
+┌─────────────────┐
+│   ◆ Glyph ◆    │
+│ (Corporeal)    │
+├─────────────────┤
+│Dmg ◆  Crit     │
+│  │      │  │   │
+│ ◆ ─ AtkSpd ─ ◆│
+│  │      │  │   │
+│◆ ──◆── Life   │
+└─────────────────┘
                     </div>
                 </div>
             </div>
 
             <div class="tips-list">
-                <h3>Board Progression Visualization</h3>
+                <h3>Progression Path</h3>
                 <ul>
                     <li><strong>STARTER:</strong> Dominate → Build damage foundation</li>
-                    <li><strong>→ MIDGAME:</strong> Essence (level glyph to 50) → Add survivability</li>
-                    <li><strong>→ ENDGAME:</strong> Gravekeeper + Imbiber → Unlock specialty synergies</li>
+                    <li><strong>→ MIDGAME:</strong> Essence (level to 50) → Add survivability</li>
+                    <li><strong>→ ENDGAME:</strong> Gravekeeper + Imbiber → Specialty synergies</li>
                     <li><strong>→ PUSH:</strong> Corporeal → Final optimization</li>
                 </ul>
-            </div>
-
-            <div class="key-notes">
-                <h3>Glyph Priority</h3>
-                <ul>
-                    <li><strong>HIGHEST:</strong> Essence to 50 (unlock board)</li>
-                    <li><strong>HIGH:</strong> Dominate (direct damage multiplier)</li>
-                    <li><strong>HIGH:</strong> Bloodbath (part of core rotation)</li>
-                    <li><strong>MEDIUM:</strong> Gravekeeper (corpse synergy)</li>
-                    <li><strong>MEDIUM:</strong> Imbiber (blood skill synergy)</li>
-                </ul>
-            </div>
-
-            <div class="image-placeholder">
-                📸 Full Paragon Board Map<br><br>
-                [For visual reference with detailed node values, check the Paragon Boards on Maxroll.gg or D4 Build Planner]<br>
-                Reference: https://maxroll.gg/d4/build-guides/blood-wave-necromancer-guide
             </div>
         </div>
 
         <footer>
-            <p>Blood Wave Necromancer Enhanced Build Guide | Diablo IV Season 15 - Hell's Legacy</p>
-            <p>Note: For detailed board layouts and skill tree images, reference Maxroll.gg and D4 Build Planner</p>
-            <p>Based on Maxroll.gg Build Guide by LordxSaura | Last Updated: September 15, 2026</p>
+            <p>Blood Wave Necromancer Complete Build Guide | Diablo IV Season 15 - Hell's Legacy</p>
+            <p>Gear • Skills • Paragon | Based on Maxroll.gg by LordxSaura</p>
         </footer>
     </div>
 
@@ -674,6 +1043,23 @@
             document.querySelectorAll('.page-btn').forEach(el => el.classList.remove('active'));
 
             document.getElementById(page).classList.add('active');
+            event.target.classList.add('active');
+
+            if (page === 'gear') {
+                document.querySelectorAll('.stage-content').forEach(el => el.classList.remove('active'));
+                document.querySelectorAll('.stage-btn').forEach(el => el.classList.remove('active'));
+                document.getElementById('starter').classList.add('active');
+                document.querySelectorAll('.stage-btn')[0].classList.add('active');
+            }
+
+            window.scrollTo(0, 0);
+        }
+
+        function switchStage(stage) {
+            document.querySelectorAll('.stage-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.stage-btn').forEach(el => el.classList.remove('active'));
+
+            document.getElementById(stage).classList.add('active');
             event.target.classList.add('active');
 
             window.scrollTo(0, 0);
