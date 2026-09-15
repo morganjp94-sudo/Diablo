@@ -1679,10 +1679,98 @@
                 </tbody>
             </table>
 
+            <!-- STAGE-BASED SKILL ALLOCATIONS -->
+            <div class="key-notes" style="margin-top: 30px;">
+                <h3>Skill Allocations by Progression Stage</h3>
+                <p style="margin-bottom: 15px; color: #ffaa44;">Exact skill point distributions from Starter → Midgame → Endgame → Push:</p>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <button class="stage-btn active" onclick="switchSkillStage('skill-starter')" style="margin-bottom: 20px;">Starter</button>
+                <button class="stage-btn" onclick="switchSkillStage('skill-midgame')" style="margin-bottom: 20px;">Midgame</button>
+                <button class="stage-btn" onclick="switchSkillStage('skill-endgame')" style="margin-bottom: 20px;">Endgame</button>
+                <button class="stage-btn" onclick="switchSkillStage('skill-push')" style="margin-bottom: 20px;">Push</button>
+            </div>
+
+            <div id="skill-starter" class="stage-content active">
+                <h3>Starter Skills (T1-4) - Total: 83 Points</h3>
+                <table class="skill-tree-table">
+                    <thead><tr><th>Skill</th><th>Points</th></tr></thead>
+                    <tbody>
+                        <tr><td class="skill-name">Reap</td><td class="points-needed">10/15</td></tr>
+                        <tr><td class="skill-name">Hemorrhage</td><td class="points-needed">9/15</td></tr>
+                        <tr><td class="skill-name">Blood Lance</td><td class="points-needed">14/15</td></tr>
+                        <tr><td class="skill-name">Blood Surge</td><td class="points-needed">9/15</td></tr>
+                        <tr><td class="skill-name">Sever</td><td class="points-needed">1/15</td></tr>
+                        <tr><td class="skill-name">Bone Prison</td><td class="points-needed">24/15</td></tr>
+                        <tr><td class="skill-name">Blood Mist</td><td class="points-needed">10/15</td></tr>
+                        <tr><td class="skill-name">Iron Maiden</td><td class="points-needed">24/15</td></tr>
+                        <tr><td class="skill-name">Blood Wave</td><td class="points-needed">24/15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="skill-midgame" class="stage-content" style="display:none;">
+                <h3>Midgame Skills (T5-8) - Total: 83 Points</h3>
+                <table class="skill-tree-table">
+                    <thead><tr><th>Skill</th><th>Points</th></tr></thead>
+                    <tbody>
+                        <tr><td class="skill-name">Reap</td><td class="points-needed">19/15</td></tr>
+                        <tr><td class="skill-name">Hemorrhage</td><td class="points-needed">18/15</td></tr>
+                        <tr><td class="skill-name">Blood Lance</td><td class="points-needed">1/15</td></tr>
+                        <tr><td class="skill-name">Blood Surge</td><td class="points-needed">18/15</td></tr>
+                        <tr><td class="skill-name">Sever</td><td class="points-needed">1/15</td></tr>
+                        <tr><td class="skill-name">Bone Prison</td><td class="points-needed">33/15</td></tr>
+                        <tr><td class="skill-name">Blood Mist</td><td class="points-needed">19/15</td></tr>
+                        <tr><td class="skill-name">Iron Maiden</td><td class="points-needed">28/15</td></tr>
+                        <tr><td class="skill-name">Decrepify</td><td class="points-needed">33/15</td></tr>
+                        <tr><td class="skill-name">Blood Wave</td><td class="points-needed">33/15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="skill-endgame" class="stage-content" style="display:none;">
+                <h3>Endgame Skills (T9-12) - Total: 83 Points</h3>
+                <table class="skill-tree-table">
+                    <thead><tr><th>Skill</th><th>Points</th></tr></thead>
+                    <tbody>
+                        <tr><td class="skill-name">Reap</td><td class="points-needed">25/15</td></tr>
+                        <tr><td class="skill-name">Hemorrhage</td><td class="points-needed">24/15</td></tr>
+                        <tr><td class="skill-name">Blood Lance</td><td class="points-needed">1/15</td></tr>
+                        <tr><td class="skill-name">Blood Surge</td><td class="points-needed">24/15</td></tr>
+                        <tr><td class="skill-name">Sever</td><td class="points-needed">1/15</td></tr>
+                        <tr><td class="skill-name">Bone Prison</td><td class="points-needed">39/15</td></tr>
+                        <tr><td class="skill-name">Blood Mist</td><td class="points-needed">25/15</td></tr>
+                        <tr><td class="skill-name">Iron Maiden</td><td class="points-needed">34/15</td></tr>
+                        <tr><td class="skill-name">Decrepify</td><td class="points-needed">39/15</td></tr>
+                        <tr><td class="skill-name">Blood Wave</td><td class="points-needed">39/15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="skill-push" class="stage-content" style="display:none;">
+                <h3>Push Skills (T13+) - Total: 83 Points</h3>
+                <table class="skill-tree-table">
+                    <thead><tr><th>Skill</th><th>Points</th></tr></thead>
+                    <tbody>
+                        <tr><td class="skill-name">Reap</td><td class="points-needed">25/15</td></tr>
+                        <tr><td class="skill-name">Hemorrhage</td><td class="points-needed">24/15</td></tr>
+                        <tr><td class="skill-name">Blood Lance</td><td class="points-needed">1/15</td></tr>
+                        <tr><td class="skill-name">Blood Surge</td><td class="points-needed">24/15</td></tr>
+                        <tr><td class="skill-name">Corpse Tendrils</td><td class="points-needed">1/15</td></tr>
+                        <tr><td class="skill-name">Bone Prison</td><td class="points-needed">39/15</td></tr>
+                        <tr><td class="skill-name">Blood Mist</td><td class="points-needed">25/15</td></tr>
+                        <tr><td class="skill-name">Iron Maiden</td><td class="points-needed">34/15</td></tr>
+                        <tr><td class="skill-name">Decrepify</td><td class="points-needed">39/15</td></tr>
+                        <tr><td class="skill-name">Blood Wave</td><td class="points-needed">39/15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
             <!-- VARIANT SKILL ALLOCATIONS -->
             <div class="key-notes" style="margin-top: 30px;">
                 <h3>Variant Skill Allocations</h3>
-                <p style="margin-bottom: 15px; color: #ffaa44;">Exact skill point distributions for each build variant:</p>
+                <p style="margin-bottom: 15px; color: #ffaa44;">Build-specific optimization notes:</p>
             </div>
 
             <div class="paragon-board-container" style="margin-top: 20px;">
@@ -3059,6 +3147,17 @@
             event.target.classList.add('active');
 
             window.scrollTo(0, 0);
+        }
+
+        function switchSkillStage(stage) {
+            document.querySelectorAll('[id^="skill-"]').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.stage-btn').forEach(el => el.classList.remove('active'));
+
+            const stageElement = document.getElementById(stage);
+            if (stageElement) {
+                stageElement.style.display = 'block';
+            }
+            event.target.classList.add('active');
         }
     </script>
 </body>
