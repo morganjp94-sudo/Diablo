@@ -482,12 +482,13 @@
 <body>
     <div class="container">
         <h1>Blood Wave Necromancer<br>Complete Build Guide</h1>
-        <p style="text-align: center; color: #ffaa44; margin-bottom: 20px;">Diablo IV Season 15 - Hell's Legacy | Gear • Skills • Paragon</p>
+        <p style="text-align: center; color: #ffaa44; margin-bottom: 20px;">Diablo IV Season 15 - Hell's Legacy | Gear • Skills • Paragon • Torment</p>
 
         <div class="page-nav">
             <button class="page-btn active" onclick="switchPage('gear')">⚔ Gear</button>
             <button class="page-btn" onclick="switchPage('skills')">🔥 Skills</button>
             <button class="page-btn" onclick="switchPage('paragon')">✨ Paragon</button>
+            <button class="page-btn" onclick="switchPage('torment')">📊 Torment</button>
         </div>
 
         <!-- ===== GEAR PAGE ===== -->
@@ -980,6 +981,376 @@
             </div>
         </div>
 
+        <!-- ===== TORMENT PAGE ===== -->
+        <div id="torment" class="page-content">
+            <h2>Torment Progression - Stat Targets</h2>
+            <p style="color: #ffaa44; margin-bottom: 20px;">Complete stat targets and difficulty tips for each Torment level T1-T12</p>
+
+            <div class="intro-text">
+                <p><strong>How to Use This Guide:</strong> Find your current Torment level below and aim to hit the stat targets shown. As you progress, your gear rolls improve and you stack additional stats. Each tier shows what you need to comfortably handle that difficulty level.</p>
+                <p><strong>Note:</strong> These targets assume proper gear and skill allocation from the Gear and Skills pages. TDS meter readings will be lower than true ppm values.</p>
+            </div>
+
+            <!-- TIER 1-3: STARTER -->
+            <div class="paragon-board-container">
+                <div class="board-name">⚔ TIER 1-3: STARTER PROGRESSION</div>
+                <p style="color: #ffaa44; margin: 15px 0;">Fresh character through early content - survival priority</p>
+                <table class="skill-tree-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Stat</th>
+                            <th style="width: 21%;">T1 Target</th>
+                            <th style="width: 21%;">T2 Target</th>
+                            <th style="width: 21%;">T3 Target</th>
+                            <th style="width: 22%;">Farming Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="skill-name">Critical Strike Chance</td>
+                            <td><span class="points-needed">25-30%</span></td>
+                            <td><span class="points-needed">30-35%</span></td>
+                            <td><span class="points-needed">35-40%</span></td>
+                            <td>Focus on rings + amulet rolls; charm slot bonus</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Attack Speed</td>
+                            <td><span class="points-needed">20-30%</span></td>
+                            <td><span class="points-needed">30-40%</span></td>
+                            <td><span class="points-needed">40-50%</span></td>
+                            <td>Bone Prison skill + rolled Attack Speed on gear</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Essence Regeneration</td>
+                            <td><span class="points-needed">8-10</span></td>
+                            <td><span class="points-needed">9-11</span></td>
+                            <td><span class="points-needed">10-12</span></td>
+                            <td>Helm + Chest priority; supplement with Harvest if needed</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Resource Cost Reduction</td>
+                            <td><span class="points-needed">12-15%</span></td>
+                            <td><span class="points-needed">15-18%</span></td>
+                            <td><span class="points-needed">18-20%</span></td>
+                            <td>Ring/Amulet rolls; stack if possible</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Maximum Life</td>
+                            <td><span class="points-needed">400-500</span></td>
+                            <td><span class="points-needed">450-550</span></td>
+                            <td><span class="points-needed">500-600</span></td>
+                            <td>Pants + Chest rolls + leveling; Seal provides boost</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Armor</td>
+                            <td><span class="points-needed">Capped (70%)</span></td>
+                            <td><span class="points-needed">Capped (70%)</span></td>
+                            <td><span class="points-needed">Capped (70%)</span></td>
+                            <td>Rolls on chest/legs/boots; use gear optimizer</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Movement Speed</td>
+                            <td><span class="points-needed">10-15%</span></td>
+                            <td><span class="points-needed">15-20%</span></td>
+                            <td><span class="points-needed">20-25%</span></td>
+                            <td>Boot rolls + paragon board progression</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tips-list" style="margin-top: 15px;">
+                    <h3>T1-3 Survival Tips</h3>
+                    <ul>
+                        <li>Don't skip Armor cap - it's your primary defense layer at this stage</li>
+                        <li>Blood Mist is your emergency escape; maintain corpse generation</li>
+                        <li>Kessime's Legacy pants are GAME CHANGING - prioritize farming this first</li>
+                        <li>Essence starvation is your main problem - get Essence Regen to 8+ minimum</li>
+                        <li>Reap is your lifeline for resource recovery - max it early</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TIER 4-6: EARLY PROGRESSION -->
+            <div class="paragon-board-container">
+                <div class="board-name">🔥 TIER 4-6: EARLY PROGRESSION</div>
+                <p style="color: #ffaa44; margin: 15px 0;">Building momentum - gear upgrades + tempers begin</p>
+                <table class="skill-tree-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Stat</th>
+                            <th style="width: 21%;">T4 Target</th>
+                            <th style="width: 21%;">T5 Target</th>
+                            <th style="width: 21%;">T6 Target</th>
+                            <th style="width: 22%;">Farming Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="skill-name">Critical Strike Chance</td>
+                            <td><span class="points-needed">40-45%</span></td>
+                            <td><span class="points-needed">45-55%</span></td>
+                            <td><span class="points-needed">55-65%</span></td>
+                            <td>Target farm rings with crit rolls; upgrade jewelry</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Attack Speed</td>
+                            <td><span class="points-needed">50-60%</span></td>
+                            <td><span class="points-needed">60-70%</span></td>
+                            <td><span class="points-needed">70-80%</span></td>
+                            <td>Add Attack Speed tempers; stack with Bone Prison</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Essence Regeneration</td>
+                            <td><span class="points-needed">10-12</span></td>
+                            <td><span class="points-needed">11-13</span></td>
+                            <td><span class="points-needed">12-14</span></td>
+                            <td>Farm +2 upgraded helm/chest; maintain stability</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Resource Cost Reduction</td>
+                            <td><span class="points-needed">18-20%</span></td>
+                            <td><span class="points-needed">19-21%</span></td>
+                            <td><span class="points-needed">20-22%</span></td>
+                            <td>Apply tempers to rings + amulet for stack</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Maximum Life</td>
+                            <td><span class="points-needed">600-700</span></td>
+                            <td><span class="points-needed">650-750</span></td>
+                            <td><span class="points-needed">700-800</span></td>
+                            <td>Upgrade pants/chest; paragon board points into Life nodes</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Armor</td>
+                            <td><span class="points-needed">Capped (70%)</span></td>
+                            <td><span class="points-needed">Capped (70%)</span></td>
+                            <td><span class="points-needed">Capped+ (80%+)</span></td>
+                            <td>Farm upgraded armor rolls; consider overcapping</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Movement Speed</td>
+                            <td><span class="points-needed">25-30%</span></td>
+                            <td><span class="points-needed">30-35%</span></td>
+                            <td><span class="points-needed">35-40%</span></td>
+                            <td>Boot tempers + paragon progression</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tips-list" style="margin-top: 15px;">
+                    <h3>T4-6 Power Scaling Tips</h3>
+                    <ul>
+                        <li><span class="emphasis">MANDATORY:</span> Apply 3x "Lucky Hit: Restore Resource" tempers on jewelry</li>
+                        <li>Damage scales exponentially with Attack Speed here - prioritize gear upgrades</li>
+                        <li>Weapon damage farming becomes critical - farm mainhand aggressively</li>
+                        <li>Nightmare Dungeons are your best tool - target +2 upgraded drops</li>
+                        <li>Start looking at Dominate board level-up for damage multiplier boost</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TIER 7-9: MID PROGRESSION -->
+            <div class="paragon-board-container">
+                <div class="board-name">⚡ TIER 7-9: MID PROGRESSION</div>
+                <p style="color: #ffaa44; margin: 15px 0;">Sweet spot - power spike zone - gear quality matters increasingly</p>
+                <table class="skill-tree-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Stat</th>
+                            <th style="width: 21%;">T7 Target</th>
+                            <th style="width: 21%;">T8 Target</th>
+                            <th style="width: 21%;">T9 Target</th>
+                            <th style="width: 22%;">Farming Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="skill-name">Critical Strike Chance</td>
+                            <td><span class="points-needed">65-70%</span></td>
+                            <td><span class="points-needed">70-75%</span></td>
+                            <td><span class="points-needed">75-85%</span></td>
+                            <td>Target best-roll jewelry pieces; amulet crit priority</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Attack Speed</td>
+                            <td><span class="points-needed">80-90%</span></td>
+                            <td><span class="points-needed">90-100%</span></td>
+                            <td><span class="points-needed">100-110%</span></td>
+                            <td>Multiple Attack Speed tempers; maximize on gear rolls</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Essence Regeneration</td>
+                            <td><span class="points-needed">12-14</span></td>
+                            <td><span class="points-needed">13-15</span></td>
+                            <td><span class="points-needed">14-16</span></td>
+                            <td>Perfect rolls priority on helm/chest; Essence board unlocked</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Resource Cost Reduction</td>
+                            <td><span class="points-needed">20-22%</span></td>
+                            <td><span class="points-needed">21-23%</span></td>
+                            <td><span class="points-needed">22-24%</span></td>
+                            <td>Add RCR tempers on multiple pieces for stack</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Maximum Life</td>
+                            <td><span class="points-needed">800-900</span></td>
+                            <td><span class="points-needed">850-950</span></td>
+                            <td><span class="points-needed">900-1100</span></td>
+                            <td>Quality upgrade focus; Essence board Life nodes active</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Armor</td>
+                            <td><span class="points-needed">Capped+ (80%+)</span></td>
+                            <td><span class="points-needed">Overcapped (90%)</span></td>
+                            <td><span class="points-needed">Overcapped (95%+)</span></td>
+                            <td>Consistently overcap; Gravekeeper board armor nodes</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Movement Speed</td>
+                            <td><span class="points-needed">40-45%</span></td>
+                            <td><span class="points-needed">45-50%</span></td>
+                            <td><span class="points-needed">50-55%</span></td>
+                            <td>Full boot temper optimization; paragon boards</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tips-list" style="margin-top: 15px;">
+                    <h3>T7-9 Optimization Focus</h3>
+                    <ul>
+                        <li>Your damage multiplier is now primarily dependent on gear ROLL QUALITY</li>
+                        <li>Unlock Essence board around T7-8 (requires Essence glyph level 50)</li>
+                        <li>Weapon damage farming IS your endgame now - mainhand damage dictates survivability window</li>
+                        <li>Begin Gravekeeper board activation for corpse skill synergy boost</li>
+                        <li>Perfect rolls become important - no more "good enough" pieces</li>
+                        <li>Lucky Hit tempers on jewelry are now non-negotiable for resource stability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TIER 10-12: HIGH TIER / ENDGAME -->
+            <div class="paragon-board-container">
+                <div class="board-name">💎 TIER 10-12: HIGH TIER / ENDGAME</div>
+                <p style="color: #ffaa44; margin: 15px 0;">Endgame wall - only perfection accepted - farm relentlessly</p>
+                <table class="skill-tree-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Stat</th>
+                            <th style="width: 21%;">T10 Target</th>
+                            <th style="width: 21%;">T11 Target</th>
+                            <th style="width: 21%;">T12 Target</th>
+                            <th style="width: 22%;">Farming Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="skill-name">Critical Strike Chance</td>
+                            <td><span class="points-needed">85-90%</span></td>
+                            <td><span class="points-needed">90-95%</span></td>
+                            <td><span class="points-needed">95%+</span></td>
+                            <td>PERFECT jewelry rolls mandatory; amulet is priority</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Attack Speed</td>
+                            <td><span class="points-needed">110-120%</span></td>
+                            <td><span class="points-needed">120-130%</span></td>
+                            <td><span class="points-needed">130%+</span></td>
+                            <td>Multiple high-roll Attack Speed tempers; stack aggressively</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Essence Regeneration</td>
+                            <td><span class="points-needed">14-16</span></td>
+                            <td><span class="points-needed">15-17</span></td>
+                            <td><span class="points-needed">16-18</span></td>
+                            <td>Only perfect/near-perfect rolls; Essence board maxed</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Resource Cost Reduction</td>
+                            <td><span class="points-needed">22-24%</span></td>
+                            <td><span class="points-needed">23-25%</span></td>
+                            <td><span class="points-needed">24-26%</span></td>
+                            <td>RCR tempers on every viable slot; stack multiple</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Maximum Life</td>
+                            <td><span class="points-needed">1000-1100</span></td>
+                            <td><span class="points-needed">1100-1200</span></td>
+                            <td><span class="points-needed">1200+</span></td>
+                            <td>ONLY perfect Life rolls; Seal + Essence board + paragon</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Armor</td>
+                            <td><span class="points-needed">Overcapped (95%+)</span></td>
+                            <td><span class="points-needed">Overcapped (95%+)</span></td>
+                            <td><span class="points-needed">Consistently 95%+</span></td>
+                            <td>Gravekeeper board fully unlocked; perfection is required</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Movement Speed</td>
+                            <td><span class="points-needed">55-60%</span></td>
+                            <td><span class="points-needed">60-65%</span></td>
+                            <td><span class="points-needed">65%+</span></td>
+                            <td>Complete boot temper optimization; all paragon nodes active</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="key-notes" style="margin-top: 15px;">
+                    <h3>T10-12 Endgame Reality Check</h3>
+                    <ul>
+                        <li><span class="emphasis">ALL gear must be ANCIENT quality or better</span> - no exceptions</li>
+                        <li>Weapon damage is now existential - single point upgrades matter</li>
+                        <li>Imbiber board activation essential for blood skill damage multiplier</li>
+                        <li>Corporeal board needed for push attempts (T13+)</li>
+                        <li>You will need: Perfect Essence Regen + Perfect Attack Speed + Perfect Crit for survivability</li>
+                        <li>Resource management becomes critical - one gap in RCR/Essence Regen = death</li>
+                        <li>99% of your farming time here is weapon/jewelry item farming</li>
+                    </ul>
+                </div>
+
+                <div class="tips-list" style="margin-top: 15px;">
+                    <h3>T10-12 Farming Ruthlessness</h3>
+                    <ul>
+                        <li>Do not settle for "close to perfect" - farm for ACTUAL perfect rolls</li>
+                        <li>Mainhand weapon damage: target only Crushing drops with 95%+ damage rolls</li>
+                        <li>Jewelry farming cycle: 50+ Nightmare runs for each jewelry piece</li>
+                        <li>Track your drops - know which pieces are holding you back</li>
+                        <li>Temper optimization becomes 80% of your progression at this stage</li>
+                        <li>Group farming Nightmare Dungeons on T10+ for faster loot cycles</li>
+                        <li>Expect to spend 30+ hours farming for a single marginal gear upgrade</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- STAT PRIORITY REFERENCE -->
+            <div class="key-notes" style="margin-top: 30px;">
+                <h3>Universal Stat Priority (All Tiers)</h3>
+                <ul>
+                    <li><span class="emphasis">TIER 1:</span> Essence Regeneration - you MUST sustain resource to do damage</li>
+                    <li><span class="emphasis">TIER 2:</span> Critical Strike Chance - damage scales exponentially with crit</li>
+                    <li><span class="emphasis">TIER 3:</span> Attack Speed - more hits = more crits = exponential damage increase</li>
+                    <li><span class="emphasis">TIER 4:</span> Maximum Life - tanking more damage = staying alive longer</li>
+                    <li><span class="emphasis">TIER 5:</span> Armor / Damage Reduction - mitigation multiplies your effective Life</li>
+                    <li><span class="emphasis">TIER 6:</span> Resource Cost Reduction - enables faster casting, which enables faster damage</li>
+                </ul>
+            </div>
+
+            <!-- DIFFICULTY CURVE NOTES -->
+            <div class="stat-targets" style="margin-top: 30px;">
+                <h3>Difficulty Curve Insights</h3>
+                <ul>
+                    <li><span class="success">T1-3:</span> Gear quality barely matters - just get the pieces</li>
+                    <li><span class="success">T4-6:</span> Gear quality starts mattering; tempers unlock game changers</li>
+                    <li><span class="success">T7-9:</span> Gear roll quality is 60% of your power; farming mindset required</li>
+                    <li><span class="success">T10-12:</span> Gear roll quality is 80% of your power; perfect is mandatory</li>
+                    <li><span class="warning">T12 is the skill check wall:</span> If you can't maintain perfect stat targets, you hit the wall hard</li>
+                    <li><span class="warning">Attack Speed scaling is exponential:</span> 10% difference feels like 30% damage change</li>
+                    <li><span class="warning">Resource management breaks without 22%+ RCR + 12+ Essence Regen:</span> You will OOM repeatedly</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- ===== PARAGON PAGE ===== -->
         <div id="paragon" class="page-content">
             <h2>Paragon Boards Progression</h2>
@@ -1140,7 +1511,7 @@
 
         <footer>
             <p>Blood Wave Necromancer Complete Build Guide | Diablo IV Season 15 - Hell's Legacy</p>
-            <p>Gear • Skills • Paragon | Based on Maxroll.gg by LordxSaura</p>
+            <p>Gear • Skills • Paragon • Torment | Based on Maxroll.gg by LordxSaura</p>
         </footer>
     </div>
 
@@ -1152,11 +1523,18 @@
             document.getElementById(page).classList.add('active');
             event.target.classList.add('active');
 
+            // Reset stage navigation and content only for gear page
             if (page === 'gear') {
                 document.querySelectorAll('.stage-content').forEach(el => el.classList.remove('active'));
                 document.querySelectorAll('.stage-btn').forEach(el => el.classList.remove('active'));
                 document.getElementById('starter').classList.add('active');
                 document.querySelectorAll('.stage-btn')[0].classList.add('active');
+            } else {
+                // Hide stage navigation for non-gear pages
+                const stageNav = document.querySelector('.stage-nav');
+                if (stageNav) {
+                    stageNav.style.display = page === 'gear' ? 'flex' : 'none';
+                }
             }
 
             window.scrollTo(0, 0);
