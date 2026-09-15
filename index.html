@@ -489,6 +489,7 @@
             <button class="page-btn" onclick="switchPage('skills')">🔥 Skills</button>
             <button class="page-btn" onclick="switchPage('paragon')">✨ Paragon</button>
             <button class="page-btn" onclick="switchPage('torment')">📊 Torment</button>
+            <button class="page-btn" onclick="switchPage('push')">💎 Push Mechanics</button>
         </div>
 
         <!-- ===== GEAR PAGE ===== -->
@@ -722,14 +723,24 @@
                 </div>
 
                 <div class="stat-targets">
-                    <h3>Starter Stat Targets</h3>
+                    <h3>Starter Stat Targets (All Variants)</h3>
                     <ul>
                         <li>Critical Strike Chance: 30-40%</li>
                         <li>Essence Regeneration: 10-12 (minimum - non-negotiable)</li>
                         <li>Resource Cost Reduction: >18%</li>
-                        <li>Attack Speed: >50% (with Ferocity stacks)</li>
+                        <li>Attack Speed: >50% (with Bone Prison active)</li>
                         <li>Maximum Life: 500+</li>
-                        <li>Armor: Capped or near-capped</li>
+                        <li>Armor: Capped or near-capped (70%)</li>
+                    </ul>
+                </div>
+
+                <div class="key-notes">
+                    <h3>Variant-Specific Differences (Starter)</h3>
+                    <ul>
+                        <li><span class="emphasis">Damage Variant:</span> Prioritize crit rolls on rings/amulet, use Aldkin mercenary for +Crit</li>
+                        <li><span class="emphasis">Balanced Variant:</span> Even split between offense/defense, use Brandir mercenary</li>
+                        <li><span class="emphasis">Tank Variant:</span> Stack Maximum Life and Armor rolls, use Dehuain mercenary for armor scaling</li>
+                        <li><span class="emphasis">Push Variant:</span> Already optimized - same gear as Damage, but with future upgrades in mind</li>
                     </ul>
                 </div>
 
@@ -737,10 +748,11 @@
                     <h3>Starter Acquisition Strategy</h3>
                     <ul>
                         <li><span class="emphasis">PRIORITY #1:</span> Farm/gamble Kessime's Legacy pants FIRST</li>
-                        <li><span class="emphasis">PRIORITY #2:</span> Collect all mandatory UNIQUE pieces</li>
-                        <li><span class="emphasis">PRIORITY #3:</span> Get proper aspects imprinted</li>
-                        <li>Don't worry about perfect rolls - just get the pieces</li>
-                        <li>Once you have Kessime's Legacy, the build's power multiplies significantly</li>
+                        <li><span class="emphasis">PRIORITY #2:</span> Collect all mandatory UNIQUE pieces (9 total uniques)</li>
+                        <li><span class="emphasis">PRIORITY #3:</span> Get proper aspects imprinted on gear</li>
+                        <li><span class="emphasis">PRIORITY #4:</span> Select variant-aligned mercenary (Aldkin/Brandir/Dehuain)</li>
+                        <li>Don't worry about perfect rolls - just get the pieces collected first</li>
+                        <li>Kessime's Legacy creates power spike - your damage effectively doubles when equipped</li>
                     </ul>
                 </div>
             </div>
@@ -749,8 +761,19 @@
             <div id="midgame" class="stage-content">
                 <h2>MIDGAME Gear (Torment 5-8)</h2>
                 <div class="intro-text">
-                    <p><strong>Focus:</strong> Upgrading Rolls on Uniques + Applying Tempers</p>
-                    <p><strong>Key Goal:</strong> All UNIQUES obtained - now optimize ROLL QUALITY</p>
+                    <p><strong>Focus:</strong> Upgrading Rolls on Uniques + Applying Tempers + Mythic Amulet Selection</p>
+                    <p><strong>Key Goal:</strong> All UNIQUES obtained with rolled upgrades + Mythic Amulet choice</p>
+                </div>
+
+                <div class="key-notes">
+                    <h3>Mythic Amulet Choice (Choose ONE per variant)</h3>
+                    <ul>
+                        <li><span class="emphasis">Damage Variant:</span> Thickened Blood (Resource restoration) - enables aggressive casting</li>
+                        <li><span class="emphasis">Balanced Variant:</span> Thickened Blood (Resource restoration) - provides sustain</li>
+                        <li><span class="emphasis">Tank Variant:</span> Bloodslick (Life on crit) or Ancestral Knowledge (survivability) - choose based on gear</li>
+                        <li><span class="emphasis">Push Variant:</span> Thickened Blood (MANDATORY) - required for high-tier pushing</li>
+                        <li><strong>Note:</strong> Mythic Amulet imprint can be changed if needed later - prioritize resource management at this stage</li>
+                    </ul>
                 </div>
 
                 <div class="gear-section">
@@ -758,31 +781,74 @@
                     <ul class="stat-priority">
                         <li><strong>All Pieces:</strong> Farm for +2 upgraded versions with better rolls</li>
                         <li><strong>Jewelry:</strong> Apply 3x "Lucky Hit Chance: Restore Resource" tempers (MANDATORY)</li>
-                        <li><strong>Helm/Chest:</strong> Upgrade Essence Regeneration rolls (maintain 10-12)</li>
+                        <li><strong>Helm/Chest:</strong> Upgrade Essence Regeneration rolls (maintain 10-12 minimum)</li>
                         <li><strong>Weapons:</strong> Upgrade mainhand weapon damage (direct DPS increase - PRIORITIZE)</li>
+                        <li><strong>Mythic Amulet:</strong> Select variant-appropriate mythic imprint</li>
                         <li><strong>Goal:</strong> 60-70% Critical Strike Chance total</li>
                     </ul>
                 </div>
 
                 <div class="stat-targets">
-                    <h3>Midgame Stat Targets</h3>
-                    <ul>
-                        <li>Critical Strike Chance: 60-70%</li>
-                        <li>Attack Speed: 30-40%</li>
-                        <li>Essence Regeneration: 10-12 (stable)</li>
-                        <li>Resource Cost Reduction: 20%+</li>
-                        <li>Maximum Life: 700+</li>
-                        <li>3x "Lucky Hit: Restore Resource" on jewelry (MANDATORY)</li>
-                    </ul>
+                    <h3>Midgame Stat Targets (Variant-Specific)</h3>
+                    <table class="skill-tree-table">
+                        <thead>
+                            <tr>
+                                <th>Stat</th>
+                                <th>Damage</th>
+                                <th>Balanced</th>
+                                <th>Tank</th>
+                                <th>Push</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-name">Critical Strike</td>
+                                <td><span class="points-needed">70-75%</span></td>
+                                <td><span class="points-needed">60-70%</span></td>
+                                <td><span class="points-needed">50-60%</span></td>
+                                <td><span class="points-needed">75%+</span></td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Attack Speed</td>
+                                <td><span class="points-needed">40-50%</span></td>
+                                <td><span class="points-needed">30-40%</span></td>
+                                <td><span class="points-needed">25-35%</span></td>
+                                <td><span class="points-needed">50%+</span></td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Essence Regen</td>
+                                <td><span class="points-needed">10-12</span></td>
+                                <td><span class="points-needed">11-13</span></td>
+                                <td><span class="points-needed">12-14</span></td>
+                                <td><span class="points-needed">12-14</span></td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Maximum Life</td>
+                                <td><span class="points-needed">600-700</span></td>
+                                <td><span class="points-needed">700-800</span></td>
+                                <td><span class="points-needed">800-900</span></td>
+                                <td><span class="points-needed">700-800</span></td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Armor</td>
+                                <td><span class="points-needed">Capped (70%)</span></td>
+                                <td><span class="points-needed">Capped (70%)</span></td>
+                                <td><span class="points-needed">Overcapped (85%)</span></td>
+                                <td><span class="points-needed">Capped (70%)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <div class="tips-list">
                     <h3>Midgame Strategy</h3>
                     <ul>
-                        <li>Farm Tempers aggressively - 3x "Lucky Hit" on jewelry MANDATORY</li>
-                        <li>Weapon damage upgrades = direct DPS increase (PRIORITIZE)</li>
-                        <li>Target farm Nightmare Dungeons for +2 upgraded gear</li>
-                        <li>Mainhand weapon is #1 farming target</li>
+                        <li><span class="emphasis">MANDATORY:</span> 3x "Lucky Hit: Restore Resource" tempers on jewelry pieces</li>
+                        <li><span class="emphasis">Damage Variant:</span> Prioritize weapon damage farming - your main scaling source</li>
+                        <li><span class="emphasis">Tank Variant:</span> Apply Life/Armor tempers to every viable slot</li>
+                        <li>Target farm Nightmare Dungeons (T5-6 range) for +2 upgraded gear drops</li>
+                        <li>Mainhand weapon is #1 farming priority across ALL variants</li>
+                        <li>Mercenary Reinforcement should match variant (Mages, Archers, or Warriors)</li>
                     </ul>
                 </div>
             </div>
@@ -792,31 +858,86 @@
                 <h2>ENDGAME Gear (Torment 9-12)</h2>
                 <div class="intro-text">
                     <p><strong>Focus:</strong> Perfect Rolls Across All Pieces</p>
-                    <p><strong>Key Goal:</strong> Every gear piece has OPTIMIZED rolls + tempers</p>
+                    <p><strong>Key Goal:</strong> Every gear piece has OPTIMIZED rolls + tempers matching your chosen variant</p>
                 </div>
 
                 <div class="key-notes">
-                    <h3>Endgame Requirements</h3>
+                    <h3>Endgame Requirements (All Variants)</h3>
                     <ul>
-                        <li>🎲 All pieces need HIGH/PERFECT rolls - no low-roll pieces</li>
-                        <li>💎 All gear pieces should be +2 upgraded or better</li>
-                        <li>⚔ All aspects verified and correctly imprinted</li>
-                        <li>🔥 Weapon damage rolls become increasingly critical</li>
-                        <li>Critical Strike Chance: 80-90% total</li>
+                        <li>🎲 All pieces need HIGH/PERFECT rolls - no low-roll pieces accepted</li>
+                        <li>💎 All gear pieces should be +2 upgraded (majority Ancient quality)</li>
+                        <li>⚔ All aspects verified and correctly imprinted on gear</li>
+                        <li>🔥 Weapon damage rolls become sacred - farm relentlessly</li>
+                        <li>🎯 Variant-aligned stat stacking intensifies at this stage</li>
                     </ul>
                 </div>
 
                 <div class="stat-targets">
-                    <h3>Endgame Stat Targets (T12 Ready)</h3>
+                    <h3>Endgame Stat Targets (T12 Ready - Variant-Specific)</h3>
+                    <table class="skill-tree-table">
+                        <thead>
+                            <tr>
+                                <th>Stat</th>
+                                <th>Damage</th>
+                                <th>Balanced</th>
+                                <th>Tank</th>
+                                <th>Push</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-name">Critical Strike</td>
+                                <td><span class="points-needed">90%+</span></td>
+                                <td><span class="points-needed">80-90%</span></td>
+                                <td><span class="points-needed">70-80%</span></td>
+                                <td><span class="points-needed">95%+</span></td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Attack Speed</td>
+                                <td><span class="points-needed">60-70%</span></td>
+                                <td><span class="points-needed">50-60%</span></td>
+                                <td><span class="points-needed">40-50%</span></td>
+                                <td><span class="points-needed">80%+</span></td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Essence Regen</td>
+                                <td><span class="points-needed">12-14</span></td>
+                                <td><span class="points-needed">13-15</span></td>
+                                <td><span class="points-needed">14-16</span></td>
+                                <td><span class="points-needed">14-16</span></td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Maximum Life</td>
+                                <td><span class="points-needed">800-900</span></td>
+                                <td><span class="points-needed">900-1000</span></td>
+                                <td><span class="points-needed">1100-1200</span></td>
+                                <td><span class="points-needed">900-1000</span></td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Armor</td>
+                                <td><span class="points-needed">Capped (70%)</span></td>
+                                <td><span class="points-needed">Capped (70%)</span></td>
+                                <td><span class="points-needed">Overcapped (90%+)</span></td>
+                                <td><span class="points-needed">Capped (70%)</span></td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Weapon Damage</td>
+                                <td><span class="points-needed">MAXIMIZED</span></td>
+                                <td><span class="points-needed">OPTIMIZED</span></td>
+                                <td><span class="points-needed">GOOD</span></td>
+                                <td><span class="points-needed">PERFECT</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="key-notes" style="margin-top: 20px;">
+                    <h3>Variant-Specific Focus (Endgame)</h3>
                     <ul>
-                        <li>Critical Strike Chance: 80-90%</li>
-                        <li>Attack Speed: 50%+ (with Ferocity stacks)</li>
-                        <li>Essence Regeneration: 12+ (stable, high rolls)</li>
-                        <li>Resource Cost Reduction: 20%+</li>
-                        <li>All resistances: Capped (70%)</li>
-                        <li>Armor: Capped or overcapped</li>
-                        <li>Maximum Life: 1000+</li>
-                        <li>Weapon Damage: MAXIMIZED on Crushing</li>
+                        <li><span class="emphasis">Damage Variant:</span> Pure crit rolls on every piece; weapon damage maximized; use Aldkin + optimal Reinforcement</li>
+                        <li><span class="emphasis">Balanced Variant:</span> Even split of offense/defense rolls; tempers balanced across all stats</li>
+                        <li><span class="emphasis">Tank Variant:</span> Life/Armor/Resistances overcapped; damage secondary; use Dehuain for scaling</li>
+                        <li><span class="emphasis">Push Variant:</span> Hybrid approach - max crit/attack speed + survivability floor; ready for T13+</li>
                     </ul>
                 </div>
             </div>
@@ -826,31 +947,98 @@
                 <h2>PUSH Gear (Torment 13+)</h2>
                 <div class="intro-text">
                     <p><strong>Focus:</strong> Absolute Perfection in Every Stat</p>
-                    <p><strong>Key Goal:</strong> Ancient/Perfect gear with MAXIMUM rolls - no compromises</p>
+                    <p><strong>Key Goal:</strong> Ancient/Perfect gear with MAXIMUM rolls - zero compromises allowed</p>
                 </div>
 
                 <div class="key-notes">
-                    <h3>Push Requirements</h3>
+                    <h3>Push Requirements (ALL Variants)</h3>
                     <ul>
-                        <li>💎 ONLY Ancient/Perfect quality pieces</li>
+                        <li>💎 ONLY Ancient/Perfect quality pieces - no exceptions</li>
                         <li>🎲 ONLY maximum or near-maximum rolls on every stat</li>
-                        <li>⚔ Every temper slot optimized - zero mediocre tempers</li>
-                        <li>🔥 Weapon damage is sacred - farm relentlessly for max rolls</li>
-                        <li>Critical Strike Chance: 95-100% (MANDATORY)</li>
+                        <li>⚔ Every temper slot optimized - zero mediocre tempers accepted</li>
+                        <li>🔥 Weapon damage is sacred - farm 100+ hours for perfect main-hand</li>
+                        <li>🎯 Variant convergence: All variants share same push core requirements</li>
                     </ul>
                 </div>
 
                 <div class="stat-targets">
                     <h3>Push Stat Targets (Tier 13+)</h3>
+                    <table class="skill-tree-table">
+                        <thead>
+                            <tr>
+                                <th>Stat</th>
+                                <th>Tier 13</th>
+                                <th>Tier 14+</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-name">Critical Strike Chance</td>
+                                <td><span class="points-needed">95%+</span></td>
+                                <td><span class="points-needed">99-100%</span></td>
+                                <td>Crit cap for consistent damage</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Attack Speed</td>
+                                <td><span class="points-needed">80-90%</span></td>
+                                <td><span class="points-needed">100%+</span></td>
+                                <td>Cast frequency multiplier</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Essence Regeneration</td>
+                                <td><span class="points-needed">14-15</span></td>
+                                <td><span class="points-needed">15-18</span></td>
+                                <td>Prevent essence starvation</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Maximum Life</td>
+                                <td><span class="points-needed">1200-1300</span></td>
+                                <td><span class="points-needed">1400+</span></td>
+                                <td>Survive mega-damage spikes</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Armor</td>
+                                <td><span class="points-needed">95%+ (Overcapped)</span></td>
+                                <td><span class="points-needed">100%+</span></td>
+                                <td>Core mitigation layer</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">All Resistances</td>
+                                <td><span class="points-needed">75%+</span></td>
+                                <td><span class="points-needed">85%+</span></td>
+                                <td>Element immunity buffer</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Weapon Damage (Crushing)</td>
+                                <td><span class="points-needed">MAXIMIZED</span></td>
+                                <td><span class="points-needed">PERFECT</span></td>
+                                <td>DPS ceiling</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="key-notes" style="margin-top: 20px;">
+                    <h3>Push-Specific Gear Mechanics</h3>
                     <ul>
-                        <li>Critical Strike Chance: 95-100%</li>
-                        <li>Attack Speed: 60%+ (with Ferocity stacks)</li>
-                        <li>Essence Regeneration: 12-15 (maximize)</li>
-                        <li>All resistances: Capped (70%)</li>
-                        <li>Armor: Capped or overcapped</li>
-                        <li>Damage Reduction: 10-15% (on gear)</li>
-                        <li>Maximum Life: 1200+</li>
-                        <li>Weapon Damage: MAXIMIZED (Ancient/Perfect)</li>
+                        <li><span class="emphasis">Block Chance Stacking:</span> If available on gear (certain unique setups), aim for 70%+ block chance combined with Bone Armor for near-immunity windows</li>
+                        <li><span class="emphasis">Lucky Hit Scaling:</span> With 99-100% Crit + high Attack Speed, Lucky Hit becomes primary resource generator</li>
+                        <li><span class="emphasis">Overpower Setup:</span> Stack Overpower damage on gear and use Blood Lance for burst phases</li>
+                        <li><span class="emphasis">Mercenary Optimization:</span> Use Aldkin (Hired) + Warriors (Reinforcement) for +Crit + Guard scaling in push attempts</li>
+                        <li><span class="emphasis">Temper Stacking:</span> Apply 5-7 different temper effects across all gear for cumulative scaling</li>
+                    </ul>
+                </div>
+
+                <div class="tips-list">
+                    <h3>Push Farming Ruthlessness</h3>
+                    <ul>
+                        <li>Expect 50-100 hour farming cycles between tier upgrades at T13+</li>
+                        <li>Weapon farming is 80% of your time at this stage</li>
+                        <li>Join group Nightmare farming for faster loot rotation</li>
+                        <li>Track every drop - know exactly which pieces are bottlenecks</li>
+                        <li>Ancient Ancient gear ONLY - Rare/Uncommon quality is disenchanted immediately</li>
+                        <li>Perfect rolls only - "close enough" costs you 20%+ damage potential</li>
                     </ul>
                 </div>
             </div>
@@ -969,14 +1157,266 @@
                 </tbody>
             </table>
 
+            <!-- VARIANT SKILL ALLOCATIONS -->
+            <div class="key-notes" style="margin-top: 30px;">
+                <h3>Variant Skill Allocations</h3>
+                <p style="margin-bottom: 15px; color: #ffaa44;">Exact skill point distributions for each build variant:</p>
+            </div>
+
+            <div class="paragon-board-container" style="margin-top: 20px;">
+                <div class="board-info" style="width: 100%; border: none;">
+                    <div class="board-name" style="border-bottom: 2px solid #ff4444; padding-bottom: 10px; margin-bottom: 15px;">🔥 DAMAGE VARIANT (Pure DPS Focus)</div>
+                    <table class="skill-tree-table">
+                        <thead>
+                            <tr>
+                                <th>Skill</th>
+                                <th>Points</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-name">Blood Wave</td>
+                                <td class="points-needed">15/15</td>
+                                <td>Maxed - core damage skill</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Blood Surge</td>
+                                <td class="points-needed">3/3</td>
+                                <td>Damage enhancement</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Hemorrhage</td>
+                                <td class="points-needed">3/3</td>
+                                <td>Crit scaling</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Blood Mist</td>
+                                <td class="points-needed">1/3</td>
+                                <td>Emergency escape only</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Reap</td>
+                                <td class="points-needed">10/15</td>
+                                <td>Resource generation</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Bone Prison</td>
+                                <td class="points-needed">5/5</td>
+                                <td>Attack speed multiplier</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Sever</td>
+                                <td class="points-needed">5/5</td>
+                                <td>Mobility + corpse gen</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Critical Passive Nodes</td>
+                                <td class="points-needed">~15</td>
+                                <td>Crit Chance/Damage on passive tree</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; color: #ffaa44; font-size: 0.9em;"><strong>Mercenary:</strong> Aldkin (Hired) - +Critical Strike Chance | Reinforcement: Mages for Essence Regen support</p>
+                </div>
+            </div>
+
+            <div class="paragon-board-container" style="margin-top: 20px;">
+                <div class="board-info" style="width: 100%; border: none;">
+                    <div class="board-name" style="border-bottom: 2px solid #ffaa44; padding-bottom: 10px; margin-bottom: 15px;">⚖ BALANCED VARIANT (Well-Rounded)</div>
+                    <table class="skill-tree-table">
+                        <thead>
+                            <tr>
+                                <th>Skill</th>
+                                <th>Points</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-name">Blood Wave</td>
+                                <td class="points-needed">15/15</td>
+                                <td>Core damage skill</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Blood Surge</td>
+                                <td class="points-needed">3/3</td>
+                                <td>Damage + utility</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Blood Mist</td>
+                                <td class="points-needed">3/3</td>
+                                <td>Full escape + corpse gen</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Hemorrhage</td>
+                                <td class="points-needed">3/3</td>
+                                <td>Crit synergy</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Reap</td>
+                                <td class="points-needed">15/15</td>
+                                <td>Maxed resource generation</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Bone Prison</td>
+                                <td class="points-needed">5/5</td>
+                                <td>Attack speed</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Iron Maiden</td>
+                                <td class="points-needed">3/5</td>
+                                <td>Partial revenge damage</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Sever</td>
+                                <td class="points-needed">5/5</td>
+                                <td>Teleport + mobility</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Balanced Passive Nodes</td>
+                                <td class="points-needed">~10</td>
+                                <td>Mixed offensive/defensive</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; color: #ffaa44; font-size: 0.9em;"><strong>Mercenary:</strong> Brandir (Hired) for balanced stats | Reinforcement: Archers for consistent damage</p>
+                </div>
+            </div>
+
+            <div class="paragon-board-container" style="margin-top: 20px;">
+                <div class="board-info" style="width: 100%; border: none;">
+                    <div class="board-name" style="border-bottom: 2px solid #44ff44; padding-bottom: 10px; margin-bottom: 15px;">🛡 TANK VARIANT (Survival Focus)</div>
+                    <table class="skill-tree-table">
+                        <thead>
+                            <tr>
+                                <th>Skill</th>
+                                <th>Points</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-name">Blood Wave</td>
+                                <td class="points-needed">15/15</td>
+                                <td>Core damage skill</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Blood Mist</td>
+                                <td class="points-needed">3/3</td>
+                                <td>Full escape + survivability</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Blood Lance</td>
+                                <td class="points-needed">3/3</td>
+                                <td>Overpower stack utility</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Reap</td>
+                                <td class="points-needed">15/15</td>
+                                <td>Maxed sustain</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Bone Prison</td>
+                                <td class="points-needed">5/5</td>
+                                <td>Attack speed + armor</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Bone Armor</td>
+                                <td class="points-needed">5/5</td>
+                                <td>Maxed defense layer</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Iron Maiden</td>
+                                <td class="points-needed">5/5</td>
+                                <td>Full revenge damage</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Sever</td>
+                                <td class="points-needed">5/5</td>
+                                <td>Escape + corpse generation</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Defense Passive Nodes</td>
+                                <td class="points-needed">~15</td>
+                                <td>Life/Armor on passive tree</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; color: #ffaa44; font-size: 0.9em;"><strong>Mercenary:</strong> Dehuain (Hired) for armor scaling | Reinforcement: Mages for group defense</p>
+                </div>
+            </div>
+
+            <div class="paragon-board-container" style="margin-top: 20px;">
+                <div class="board-info" style="width: 100%; border: none;">
+                    <div class="board-name" style="border-bottom: 2px solid #ff4444; padding-bottom: 10px; margin-bottom: 15px;">💎 PUSH VARIANT (Tier 13+ Optimization)</div>
+                    <table class="skill-tree-table">
+                        <thead>
+                            <tr>
+                                <th>Skill</th>
+                                <th>Points</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-name">Blood Wave</td>
+                                <td class="points-needed">15/15</td>
+                                <td>Maxed core skill</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Blood Surge</td>
+                                <td class="points-needed">3/3</td>
+                                <td>Damage + utility</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Hemorrhage</td>
+                                <td class="points-needed">3/3</td>
+                                <td>Crit scaling</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Blood Mist</td>
+                                <td class="points-needed">3/3</td>
+                                <td>Full escape mechanics</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Reap</td>
+                                <td class="points-needed">15/15</td>
+                                <td>Maxed resource generation</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Bone Prison</td>
+                                <td class="points-needed">5/5</td>
+                                <td>Attack speed cap</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Bone Armor</td>
+                                <td class="points-needed">5/5</td>
+                                <td>Maxed protection</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Sever</td>
+                                <td class="points-needed">5/5</td>
+                                <td>Escape + positioning</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Push Optimization Nodes</td>
+                                <td class="points-needed">~10</td>
+                                <td>Crit/Resolve stacking on tree</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; color: #ffaa44; font-size: 0.9em;"><strong>Mercenary:</strong> Aldkin (Hired) for crit ceiling | Reinforcement: Warriors for guard generation</p>
+                </div>
+            </div>
+
             <div class="tips-list">
-                <h3>Allocation Order</h3>
+                <h3>Allocation Strategy by Stage</h3>
                 <ul>
-                    <li><strong>Step 1:</strong> Max Blood Wave (5 pts)</li>
-                    <li><strong>Step 2:</strong> Max Reap (5 pts) + Iron Maiden (5 pts)</li>
-                    <li><strong>Step 3:</strong> Max Sever (5 pts) + Blood Mist (3 pts)</li>
-                    <li><strong>Step 4:</strong> Add blood skill enhancements</li>
-                    <li><strong>Step 5:</strong> Fill in critical damage nodes</li>
+                    <li><strong>Starter (T1-4):</strong> Follow Balanced variant - build survivability foundation</li>
+                    <li><strong>Midgame (T5-8):</strong> Shift toward Damage variant - prioritize crit scaling</li>
+                    <li><strong>Endgame (T9-12):</strong> Choose Tank or Damage based on gear rolls - adapt to what you have</li>
+                    <li><strong>Push (T13+):</strong> Use Push variant - requires perfect stat scaling and mercenary coordination</li>
                 </ul>
             </div>
         </div>
@@ -1323,16 +1763,76 @@
                 </div>
             </div>
 
+            <!-- VARIANT SCALING GUIDE -->
+            <div class="paragon-board-container" style="margin-top: 30px;">
+                <div class="board-name">⚙ Variant Progression Chart (T1-T12)</div>
+                <p style="color: #ffaa44; margin: 15px 0; font-size: 0.9em;"><strong>How each variant's stat priorities shift through progression:</strong></p>
+                <table class="skill-tree-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 18%;">Tier Range</th>
+                            <th style="width: 20.5%;">Damage Priority</th>
+                            <th style="width: 20.5%;">Balanced Priority</th>
+                            <th style="width: 20.5%;">Tank Priority</th>
+                            <th style="width: 20.5%;">Push Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="skill-name">T1-3</td>
+                            <td>Crit buildup | Essential Regen</td>
+                            <td>Regen + Armor balance</td>
+                            <td>Max Life, Armor capped</td>
+                            <td>Foundation: Regen + Armor</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">T4-6</td>
+                            <td>Weapon damage focus</td>
+                            <td>Even stat stacking</td>
+                            <td>Life stacking intensifies</td>
+                            <td>Crit + Attack Speed begins</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">T7-9</td>
+                            <td>Crit cap approach 90%</td>
+                            <td>Quality roll focus</td>
+                            <td>Armor overcap 90%+</td>
+                            <td>Crit 80%+ target</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">T10-12</td>
+                            <td>Crit 95%+ ceiling</td>
+                            <td>Perfect roll only</td>
+                            <td>Life 1100+ cap</td>
+                            <td>Crit 95%+ required</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <!-- STAT PRIORITY REFERENCE -->
             <div class="key-notes" style="margin-top: 30px;">
-                <h3>Universal Stat Priority (All Tiers)</h3>
+                <h3>Universal Stat Priority (All Tiers & Variants)</h3>
                 <ul>
-                    <li><span class="emphasis">TIER 1:</span> Essence Regeneration - you MUST sustain resource to do damage</li>
-                    <li><span class="emphasis">TIER 2:</span> Critical Strike Chance - damage scales exponentially with crit</li>
-                    <li><span class="emphasis">TIER 3:</span> Attack Speed - more hits = more crits = exponential damage increase</li>
-                    <li><span class="emphasis">TIER 4:</span> Maximum Life - tanking more damage = staying alive longer</li>
-                    <li><span class="emphasis">TIER 5:</span> Armor / Damage Reduction - mitigation multiplies your effective Life</li>
-                    <li><span class="emphasis">TIER 6:</span> Resource Cost Reduction - enables faster casting, which enables faster damage</li>
+                    <li><span class="emphasis">TIER 1:</span> Essence Regeneration - you MUST sustain resource to do damage at all</li>
+                    <li><span class="emphasis">TIER 2:</span> Critical Strike Chance - damage scales exponentially with crit percentage</li>
+                    <li><span class="emphasis">TIER 3:</span> Attack Speed - more hits = more crits = exponential damage multiplier</li>
+                    <li><span class="emphasis">TIER 4:</span> Maximum Life - tanking more damage = staying alive through push phases</li>
+                    <li><span class="emphasis">TIER 5:</span> Armor / Damage Reduction - mitigation multiplies your effective Life pool</li>
+                    <li><span class="emphasis">TIER 6:</span> Resource Cost Reduction - enables faster casting cycle</li>
+                </ul>
+            </div>
+
+            <!-- VARIANT-SPECIFIC TIPS -->
+            <div class="stat-targets" style="margin-top: 30px;">
+                <h3>Variant-Specific Progression Tips</h3>
+                <ul>
+                    <li><span class="success">Damage Variant:</span> Weapon farming is 70% of progression time - accept nothing less than perfect rolls</li>
+                    <li><span class="success">Balanced Variant:</span> Can handle both high and low-tier content comfortably with versatile stat spread</li>
+                    <li><span class="success">Tank Variant:</span> Armor/Life overcap prevents one-shots - survivability enables longer pushes</li>
+                    <li><span class="success">Push Variant:</span> Requires all stats maximized - no weak links in the chain</li>
+                    <li><span class="warning">Crit ceiling matters:</span> Hitting 95%+ crit chance enables 100% Lucky Hit proc rate at high Attack Speed</li>
+                    <li><span class="warning">Essence starvation kills push runs:</span> 14+ Essence Regen + 20%+ RCR non-negotiable for T13+</li>
                 </ul>
             </div>
 
@@ -1499,19 +1999,503 @@
             </div>
 
             <div class="tips-list">
-                <h3>Progression Path</h3>
+                <h3>Universal Progression Path</h3>
                 <ul>
-                    <li><strong>STARTER:</strong> Dominate → Build damage foundation</li>
-                    <li><strong>→ MIDGAME:</strong> Essence (level to 50) → Add survivability</li>
-                    <li><strong>→ ENDGAME:</strong> Gravekeeper + Imbiber → Specialty synergies</li>
-                    <li><strong>→ PUSH:</strong> Corporeal → Final optimization</li>
+                    <li><strong>STARTER:</strong> Dominate (Build damage foundation)</li>
+                    <li><strong>→ MIDGAME:</strong> Essence board unlock (level Essence glyph to 50+ first)</li>
+                    <li><strong>→ ENDGAME:</strong> Gravekeeper + Imbiber (Specialty synergies activate)</li>
+                    <li><strong>→ PUSH:</strong> Corporeal board (Final optimization for T13+)</li>
+                </ul>
+            </div>
+
+            <!-- VARIANT-SPECIFIC PARAGON STRATEGIES -->
+            <div class="key-notes" style="margin-top: 30px;">
+                <h3>Variant-Specific Board Progression Strategies</h3>
+                <p style="margin-bottom: 15px; color: #ffaa44;">Each variant prioritizes different board nodes and glyph levels:</p>
+            </div>
+
+            <div class="paragon-board-container" style="margin-top: 20px;">
+                <div class="board-info" style="width: 100%; border: none;">
+                    <div class="board-name" style="border-bottom: 2px solid #ff4444; padding-bottom: 10px; margin-bottom: 15px;">🔥 DAMAGE VARIANT - Paragon Strategy</div>
+                    <table class="skill-tree-table">
+                        <thead>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Primary Board</th>
+                                <th>Key Nodes</th>
+                                <th>Glyph Level Target</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-name">Starter (T1-4)</td>
+                                <td>Dominate</td>
+                                <td>Crit Damage tiles + Attack Speed nodes</td>
+                                <td>Dominate: 20+</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Midgame (T5-8)</td>
+                                <td>Dominate → Essence</td>
+                                <td>Essence: Damage nodes (ignore Life nodes)</td>
+                                <td>Essence: 50 (unlock board)</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Endgame (T9-12)</td>
+                                <td>Imbiber focus</td>
+                                <td>Blood skill damage multipliers</td>
+                                <td>Imbiber: 50+ (max)</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Push (T13+)</td>
+                                <td>Corporeal</td>
+                                <td>Crit Damage + Attack Speed</td>
+                                <td>All glyphs: Max out</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; color: #ffaa44; font-size: 0.9em;"><strong>Philosophy:</strong> Pure DPS scaling - skip Life nodes entirely until T12, then add only as needed</p>
+                </div>
+            </div>
+
+            <div class="paragon-board-container" style="margin-top: 20px;">
+                <div class="board-info" style="width: 100%; border: none;">
+                    <div class="board-name" style="border-bottom: 2px solid #ffaa44; padding-bottom: 10px; margin-bottom: 15px;">⚖ BALANCED VARIANT - Paragon Strategy</div>
+                    <table class="skill-tree-table">
+                        <thead>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Primary Board</th>
+                                <th>Key Nodes</th>
+                                <th>Glyph Level Target</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-name">Starter (T1-4)</td>
+                                <td>Dominate</td>
+                                <td>Balanced offense + defense nodes</td>
+                                <td>Dominate: 20+</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Midgame (T5-8)</td>
+                                <td>Dominate + Essence</td>
+                                <td>Essence: Mix of Damage and Life nodes</td>
+                                <td>Essence: 50 (unlock)</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Endgame (T9-12)</td>
+                                <td>Gravekeeper + Imbiber</td>
+                                <td>Even split of damage and survivability</td>
+                                <td>Both glyphs: 40-45</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Push (T13+)</td>
+                                <td>Corporeal</td>
+                                <td>Hybrid damage/Life optimization</td>
+                                <td>All glyphs: 45-50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; color: #ffaa44; font-size: 0.9em;"><strong>Philosophy:</strong> Flexibility - can adapt to gear rolls, scale offense and defense in tandem</p>
+                </div>
+            </div>
+
+            <div class="paragon-board-container" style="margin-top: 20px;">
+                <div class="board-info" style="width: 100%; border: none;">
+                    <div class="board-name" style="border-bottom: 2px solid #44ff44; padding-bottom: 10px; margin-bottom: 15px;">🛡 TANK VARIANT - Paragon Strategy</div>
+                    <table class="skill-tree-table">
+                        <thead>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Primary Board</th>
+                                <th>Key Nodes</th>
+                                <th>Glyph Level Target</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-name">Starter (T1-4)</td>
+                                <td>Dominate + Essence</td>
+                                <td>Essence: Life + Armor nodes priority</td>
+                                <td>Essence: 30+ early</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Midgame (T5-8)</td>
+                                <td>Essence focus</td>
+                                <td>All Life/Armor nodes on Essence</td>
+                                <td>Essence: 50 (unlock)</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Endgame (T9-12)</td>
+                                <td>Gravekeeper primary</td>
+                                <td>Corpse generation + Armor scaling</td>
+                                <td>Gravekeeper: 50+ max</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Push (T13+)</td>
+                                <td>Gravekeeper + Essence</td>
+                                <td>Overcap armor and Life</td>
+                                <td>Gravekeeper: Max, Essence: 50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; color: #ffaa44; font-size: 0.9em;"><strong>Philosophy:</strong> Survivability cascade - build defense layers first, damage comes last</p>
+                </div>
+            </div>
+
+            <div class="paragon-board-container" style="margin-top: 20px;">
+                <div class="board-info" style="width: 100%; border: none;">
+                    <div class="board-name" style="border-bottom: 2px solid #ff4444; padding-bottom: 10px; margin-bottom: 15px;">💎 PUSH VARIANT - Paragon Strategy</div>
+                    <table class="skill-tree-table">
+                        <thead>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Primary Board</th>
+                                <th>Key Nodes</th>
+                                <th>Glyph Level Target</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="skill-name">Early Prep (T1-8)</td>
+                                <td>Dominate + Essence</td>
+                                <td>Balanced buildup for scaling</td>
+                                <td>Essence: 50+ (unlock)</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Mid Prep (T9-11)</td>
+                                <td>Imbiber + Essence</td>
+                                <td>Blood damage multipliers activate</td>
+                                <td>Imbiber: 45+ | Essence: Max</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Late Prep (T12)</td>
+                                <td>All 4 boards active</td>
+                                <td>Fine-tune node pathing</td>
+                                <td>All glyphs: 50+</td>
+                            </tr>
+                            <tr>
+                                <td class="skill-name">Push (T13+)</td>
+                                <td>Corporeal final board</td>
+                                <td>Resolve stacking + crit optimization</td>
+                                <td>All glyphs: Maxed (60+)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 10px; color: #ffaa44; font-size: 0.9em;"><strong>Philosophy:</strong> Total optimization - all boards unlocked and maxed for tier 13+</p>
+                </div>
+            </div>
+
+            <div class="tips-list" style="margin-top: 30px;">
+                <h3>Glyph Leveling Strategy (All Variants)</h3>
+                <ul>
+                    <li><strong>Starter:</strong> Focus Dominate glyph to level 20+ before moving to secondary boards</li>
+                    <li><strong>Midgame:</strong> Level Essence glyph to exactly 50 to unlock the Essence board - this is a tier gate</li>
+                    <li><strong>Endgame:</strong> Level Imbiber and Gravekeeper to 45+ for synergy bonuses to activate</li>
+                    <li><strong>Push:</strong> Max all glyphs to 60+ - glyph levels directly correlate with scaling breakpoints</li>
+                    <li><span class="warning">Critical:</span> Glyph level 50 on Essence board is mandatory gate - cannot access board without it</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== PUSH MECHANICS PAGE ===== -->
+        <div id="push" class="page-content">
+            <h2>Push Mechanics & Strategies</h2>
+            <p style="color: #ffaa44; margin-bottom: 20px;">Tier 13+ Survival Mechanics, Resolve Stacking, and Item Combinations</p>
+
+            <div class="intro-text">
+                <p><strong>What This Page Covers:</strong> Pushing requires understanding synergistic mechanics beyond raw stats. This guide explains how to stack defensive layers, use Resolve mechanics, leverage corpse abilities, and combine gear/skills for maximum survival in high-tier dungeons.</p>
+                <p><strong>Core Principle:</strong> A dead Necromancer does zero damage. Survival IS damage at tier 13+.</p>
+            </div>
+
+            <!-- SURVIVAL LAYERS -->
+            <div class="paragon-board-container">
+                <div class="board-name">🛡️ SURVIVAL LAYERS STACKING</div>
+                <p style="color: #ffaa44; margin: 15px 0;">Blood Wave Necromancer has 5 defensive layers. Stack ALL of them for maximum survival:</p>
+
+                <div class="gear-section">
+                    <h3>Layer 1: Armor & Damage Reduction (Foundation)</h3>
+                    <ul class="stat-priority">
+                        <li><strong>Target:</strong> 95-100% Armor cap + 10-15% additional Damage Reduction on gear</li>
+                        <li><strong>Gear Sources:</strong> Helm, Chest, Gloves, Boots - all should roll Armor</li>
+                        <li><strong>Effect:</strong> Reduces incoming physical damage by ~95%. This is your PRIMARY defense.</li>
+                        <li><strong>Push Tip:</strong> Armor is non-negotiable at T13+ - every point matters</li>
+                    </ul>
+                </div>
+
+                <div class="gear-section">
+                    <h3>Layer 2: Maximum Life Pool (Health Buffer)</h3>
+                    <ul class="stat-priority">
+                        <li><strong>Target:</strong> 1400+ Maximum Life</li>
+                        <li><strong>Gear Sources:</strong> Pants (Kessime's Legacy), Chest, Seal, all defensive rolls</li>
+                        <li><strong>Synergies:</strong> Combines with Armor for effective health calculation</li>
+                        <li><strong>Formula:</strong> Effective Life = Max Life / (1 - Armor Reduction %)</li>
+                        <li><strong>Push Tip:</strong> 1400 life with 95% armor ≈ 28,000 effective health</li>
+                    </ul>
+                </div>
+
+                <div class="gear-section">
+                    <h3>Layer 3: Bone Armor Active Skills (Cooldown Reduction)</h3>
+                    <ul class="stat-priority">
+                        <li><strong>Effect:</strong> 5 ranks in Bone Armor provides periodic shields</li>
+                        <li><strong>Duration:</strong> ~8 second cooldown with optimal CDR stacking</li>
+                        <li><strong>Synergy:</strong> Pairs with Iron Maiden for revenge damage during windows</li>
+                        <li><strong>Push Tip:</strong> Use Bone Armor + Blood Mist together for escape sequences</li>
+                    </ul>
+                </div>
+
+                <div class="gear-section">
+                    <h3>Layer 4: Blood Mist Teleport (Escape Mechanic)</h3>
+                    <ul class="stat-priority">
+                        <li><strong>Cooldown:</strong> 4-6 second teleport available constantly with glyph support</li>
+                        <li><strong>Corpse Generation:</strong> Generates corpses on exit for sustain</li>
+                        <li><strong>Positioning:</strong> Use Blood Mist to kite dangerous champion packs away from spawn</li>
+                        <li><strong>Push Tip:</strong> Never stay in one spot for >3 seconds at T13+</li>
+                    </ul>
+                </div>
+
+                <div class="gear-section">
+                    <h3>Layer 5: Resolve Stacking (Immunity Windows)</h3>
+                    <ul class="stat-priority">
+                        <li><strong>What is Resolve?</strong> Stack-based immunity mechanic - each stack = 5% damage reduction up to 100%</li>
+                        <li><strong>How to Stack:</strong> Land Critical Strikes to build stacks (Imbiber board + high crit chance)</li>
+                        <li><strong>Duration:</strong> Stacks last 10 seconds with refresh on new crits</li>
+                        <li><strong>Maximum Stacks:</strong> 20 stacks = 100% damage immunity window</li>
+                        <li><strong>Push Tip:</strong> With 95%+ crit chance at high attack speed, you should have 100% resolve uptime</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RESOLVE MECHANICS IN DEPTH -->
+            <div class="paragon-board-container" style="margin-top: 30px;">
+                <div class="board-name">⚡ RESOLVE STACKING MECHANICS (Advanced)</div>
+                <p style="color: #ffaa44; margin: 15px 0;">Resolve is THE push mechanic - understanding it is critical for tier 13+ survival:</p>
+
+                <table class="skill-tree-table">
+                    <thead>
+                        <tr>
+                            <th>Resolve Stacks</th>
+                            <th>Damage Reduction</th>
+                            <th>Effective Health Multiplier</th>
+                            <th>Breakpoint</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="skill-name">0 stacks</td>
+                            <td><span class="points-needed">0% (Base)</span></td>
+                            <td>1.00x</td>
+                            <td>Dangerous zone</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">5 stacks</td>
+                            <td><span class="points-needed">25% bonus</span></td>
+                            <td>1.33x</td>
+                            <td>Starting protection</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">10 stacks</td>
+                            <td><span class="points-needed">50% bonus</span></td>
+                            <td>2.00x</td>
+                            <td>Safe zone</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">15 stacks</td>
+                            <td><span class="points-needed">75% bonus</span></td>
+                            <td>4.00x</td>
+                            <td>Very safe</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">20 stacks (MAX)</td>
+                            <td><span class="points-needed">100% immunity</span></td>
+                            <td>Infinite</td>
+                            <td>Invulnerable</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="key-notes" style="margin-top: 15px;">
+                    <h3>How to Maintain Resolve Uptime</h3>
+                    <ul>
+                        <li><strong>Crit Requirement:</strong> You need 95%+ Critical Strike Chance to reliably build stacks in active combat</li>
+                        <li><strong>Attack Speed Scaling:</strong> At 100%+ Attack Speed, you build 5-8 stacks per second at high crit</li>
+                        <li><strong>Paragon Setup:</strong> Imbiber board MUST be unlocked (glyph level 50+) for resolve scaling</li>
+                        <li><strong>Passive Playstyle:</strong> When kiting with Blood Mist, you lose crit stacks - reposition after 4-5 seconds of casting</li>
+                        <li><strong>Boss Phases:</strong> Elite packs give consistent stacks - use Blood Mist to maintain distance while stacking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CORPSE TENDRIL MECHANICS -->
+            <div class="paragon-board-container" style="margin-top: 30px;">
+                <div class="board-name">💀 CORPSE TENDRIL MECHANICS & SYNERGIES</div>
+                <p style="color: #ffaa44; margin: 15px 0;">Corpse Tendrils are automated crowd control - they enable push survival at tier 13+:</p>
+
+                <div class="gear-section">
+                    <h3>How Corpse Tendrils Work</h3>
+                    <ul class="stat-priority">
+                        <li><strong>Trigger:</strong> Activated when corpses are consumed by Blood Mist or Sever</li>
+                        <li><strong>Effect:</strong> Pulls nearby enemies toward corpse location, stunning them</li>
+                        <li><strong>Duration:</strong> Stun duration scales with skill ranks in corpse-consuming skills</li>
+                        <li><strong>Radius:</strong> ~40 yard effect radius - covers entire push corridor</li>
+                        <li><strong>Damage:</strong> Corpse Tendrils deal additional damage if Gravekeeper board is active</li>
+                    </ul>
+                </div>
+
+                <div class="gear-section">
+                    <h3>Corpse Generation Strategy</h3>
+                    <ul class="stat-priority">
+                        <li><strong>Generators:</strong> Reap, Sever, Blood Mist ALL generate corpses</li>
+                        <li><strong>Sever Priority:</strong> Sever should be your primary corpse generator (5 ranks)</li>
+                        <li><strong>Corpse Pool:</strong> Maintain 2-3 corpses in your pool for emergency Blood Mist escapes</li>
+                        <li><strong>Push Playstyle:</strong> Generate corpse → consume for stun → Blood Wave while enemies stunned</li>
+                    </ul>
+                </div>
+
+                <div class="gear-section">
+                    <h3>Item Combinations for Corpse Synergy</h3>
+                    <ul class="stat-priority">
+                        <li><strong>Helm Aspect (Hardened Bones):</strong> +Corpse generation from Blood Wave hits</li>
+                        <li><strong>Gravekeeper Board Activation:</strong> Unlocks Corpse Tendril damage multiplier (Level 50+ glyph)</li>
+                        <li><strong>Blood Lance Skill (3 ranks):</strong> Pairs with Overpower stacks to consume corpses for burst</li>
+                        <li><strong>Synergy Result:</strong> Every other Blood Wave spawns a Corpse Tendril stun</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ITEM COMBINATIONS FOR PUSH -->
+            <div class="paragon-board-container" style="margin-top: 30px;">
+                <div class="board-name">🔗 ITEM COMBINATIONS FOR PUSH (T13+ Synergies)</div>
+                <p style="color: #ffaa44; margin: 15px 0;">Gear combinations that enable push survival through multiplicative scaling:</p>
+
+                <table class="skill-tree-table">
+                    <thead>
+                        <tr>
+                            <th>Combination Name</th>
+                            <th>Components</th>
+                            <th>Synergy Effect</th>
+                            <th>Tier Breakthrough</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="skill-name">Essence Regen Loop</td>
+                            <td>Helm (Hardened Bones) + Chest (Juggernaut's) + Amulet (Thickened Blood) + 3x Lucky Hit tempers</td>
+                            <td>15% Crit chance to restore 12 resource + constant Essence generation = infinite casting</td>
+                            <td>T5+ becomes sustainable</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Double Wave Damage</td>
+                            <td>Kessime's Legacy (Pants) + Imbiber Board + Weapon damage maximized</td>
+                            <td>Two waves from both sides + Imbiber damage multiplier = 4x damage multiplier</td>
+                            <td>T8+ becomes comfortable</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Resolve Immunity Build</td>
+                            <td>95%+ Armor + 95%+ Crit Chance + Imbiber Board (Level 50+) + 100%+ Attack Speed</td>
+                            <td>Maintain 100% Resolve uptime = 100% damage immunity with spell rotations</td>
+                            <td>T13+ is survivable</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Corpse Stun Cascade</td>
+                            <td>Sever (5 ranks) + Hardened Bones aspect + Gravekeeper board + Blood Mist (3 ranks)</td>
+                            <td>Every Sever generates corpse → Blood Mist escape → Corpse Tendril stun</td>
+                            <td>T11+ elite packs controllable</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">Mercenary Sync</td>
+                            <td>Aldkin (Hired) + Warriors (Reinforcement) + 100% Armor cap</td>
+                            <td>Mercenary +Crit Chance + Guard stacking = secondary HP pool + crit scaling</td>
+                            <td>T13+ becomes viable</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PUSH STAT PRIORITIES -->
+            <div class="key-notes" style="margin-top: 30px;">
+                <h3>Push Tier Stat Priorities (T13+)</h3>
+                <ul>
+                    <li><span class="emphasis">TIER 1:</span> Essence Regeneration 15+ (sustain casting cycles)</li>
+                    <li><span class="emphasis">TIER 2:</span> Critical Strike Chance 95%+ (Resolve stacking)</li>
+                    <li><span class="emphasis">TIER 3:</span> Attack Speed 100%+ (stack refresh rate)</li>
+                    <li><span class="emphasis">TIER 4:</span> Armor 95-100% (damage mitigation foundation)</li>
+                    <li><span class="emphasis">TIER 5:</span> Maximum Life 1400+ (stack overflow buffer)</li>
+                    <li><span class="emphasis">TIER 6:</span> Weapon Damage MAXIMIZED (burst phase capability)</li>
+                </ul>
+            </div>
+
+            <!-- PUSH TIER PROGRESSION -->
+            <div class="stat-targets" style="margin-top: 30px;">
+                <h3>Push Tier Progression & Breakpoints</h3>
+                <table class="skill-tree-table">
+                    <thead>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Difficulty Spike</th>
+                            <th>New Challenge</th>
+                            <th>Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="skill-name">T13</td>
+                            <td>Monster density increases 30%</td>
+                            <td>Essence starvation from casting</td>
+                            <td>15+ Essence Regen + 3x Lucky Hit mandatory</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">T14</td>
+                            <td>Elite packs deal 2x damage</td>
+                            <td>One-shots from champion abilities</td>
+                            <td>95%+ Armor + Resolve stacking (100% uptime)</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">T15</td>
+                            <td>Boss phases unpredictable</td>
+                            <td>Burst windows from boss ultimates</td>
+                            <td>Maintain 100% Resolve + Blood Mist escape ready</td>
+                        </tr>
+                        <tr>
+                            <td class="skill-name">T16+</td>
+                            <td>Monster affixes compound</td>
+                            <td>Layered debuffs reduce survivability</td>
+                            <td>All 5 survival layers maxed; perfect gear only</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PUSH TIPS & STRATEGIES -->
+            <div class="tips-list" style="margin-top: 30px;">
+                <h3>Push Strategy Tips & Positioning</h3>
+                <ul>
+                    <li><span class="emphasis">Kiting Pattern:</span> Cast 2-3 Blood Waves → Blood Mist escape → reposition → repeat</li>
+                    <li><span class="emphasis">Corpse Management:</span> Keep Sever corpses pooled for emergency escapes</li>
+                    <li><span class="emphasis">Boss Mechanics:</span> Stay mobile during boss phases - heavy armor negates boss one-shots if you position correctly</li>
+                    <li><span class="emphasis">Resolve Windows:</span> Build to 20 stacks, maintain for entire group phase, reset on new elite pack</li>
+                    <li><span class="emphasis">Mercenary Synergy:</span> Position Aldkin in opposite corner to split damage incoming</li>
+                    <li><span class="emphasis">Resource Management:</span> Monitor Essence pool - retreat if dropping below 25% resource</li>
+                    <li><span class="emphasis">Tempo Control:</span> You control fight speed with Blood Mist; slow it down if health drops</li>
+                </ul>
+            </div>
+
+            <!-- WHAT NOT TO DO -->
+            <div class="key-notes" style="margin-top: 30px; background-color: #2a1a1a;">
+                <h3 style="color: #ff4444;">Push Failure Points (What Kills You)</h3>
+                <ul>
+                    <li><span class="warning">ESSENCE STARVATION:</span> Running out of resource mid-elite pack = instant death. Monitor resource bar constantly.</li>
+                    <li><span class="warning">RESOLVE GAPS:</span> Letting resolve drop to 0 stacks during elite phases = 50%+ spike damage = one-shot.</li>
+                    <li><span class="warning">CORPSE WASTE:</span> Using all corpses on Blood Mist early = no escape for boss phases.</li>
+                    <li><span class="warning">POSITIONING ERRORS:</span> Standing in champion attack zones = even 100% Armor cannot save you from certain attacks.</li>
+                    <li><span class="warning">MERCENARY DEATH:</span> If Aldkin dies, you lose +Crit bonus = Resolve stacking breaks = cascade failure.</li>
                 </ul>
             </div>
         </div>
 
         <footer>
             <p>Blood Wave Necromancer Complete Build Guide | Diablo IV Season 15 - Hell's Legacy</p>
-            <p>Gear • Skills • Paragon • Torment | Based on Maxroll.gg by LordxSaura</p>
+            <p>Gear • Skills • Paragon • Torment • Push Mechanics | Based on Maxroll.gg by LordxSaura</p>
         </footer>
     </div>
 
@@ -1520,21 +2504,23 @@
             document.querySelectorAll('.page-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.page-btn').forEach(el => el.classList.remove('active'));
 
-            document.getElementById(page).classList.add('active');
+            const pageElement = document.getElementById(page);
+            if (pageElement) {
+                pageElement.classList.add('active');
+            }
+
             event.target.classList.add('active');
 
-            // Reset stage navigation and content only for gear page
+            // Handle stage navigation - only show for gear page
+            const stageNav = document.querySelector('.stage-nav');
             if (page === 'gear') {
+                if (stageNav) stageNav.style.display = 'flex';
                 document.querySelectorAll('.stage-content').forEach(el => el.classList.remove('active'));
                 document.querySelectorAll('.stage-btn').forEach(el => el.classList.remove('active'));
                 document.getElementById('starter').classList.add('active');
                 document.querySelectorAll('.stage-btn')[0].classList.add('active');
             } else {
-                // Hide stage navigation for non-gear pages
-                const stageNav = document.querySelector('.stage-nav');
-                if (stageNav) {
-                    stageNav.style.display = page === 'gear' ? 'flex' : 'none';
-                }
+                if (stageNav) stageNav.style.display = 'none';
             }
 
             window.scrollTo(0, 0);
@@ -1544,7 +2530,10 @@
             document.querySelectorAll('.stage-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.stage-btn').forEach(el => el.classList.remove('active'));
 
-            document.getElementById(stage).classList.add('active');
+            const stageElement = document.getElementById(stage);
+            if (stageElement) {
+                stageElement.classList.add('active');
+            }
             event.target.classList.add('active');
 
             window.scrollTo(0, 0);
