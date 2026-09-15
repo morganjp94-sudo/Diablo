@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Wave Necromancer - Gear Progression Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0e27;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff4444;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: #ff7744;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #ff4444;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #ffaa44;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .stage-nav {
+            display: flex;
+            gap: 10px;
+            margin: 30px 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .stage-btn {
+            padding: 12px 25px;
+            background-color: #1a1f3a;
+            border: 2px solid #ff4444;
+            color: #ff4444;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .stage-btn:hover,
+        .stage-btn.active {
+            background-color: #ff4444;
+            color: #0a0e27;
+        }
+
+        .stage-content {
+            display: none;
+        }
+
+        .stage-content.active {
+            display: block;
+        }
+
+        .intro-text {
+            background-color: #1a1f3a;
+            padding: 15px;
+            border-left: 4px solid #ff4444;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .intro-text p {
+            margin-bottom: 8px;
+        }
+
+        .intro-text strong {
+            color: #ff7744;
+        }
+
+        .gear-section {
+            background-color: #1a1f3a;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #ff7744;
+        }
+
+        .gear-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #2a3050;
+        }
+
+        .gear-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .gear-slot {
+            color: #ffaa44;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .gear-name {
+            color: #ff7744;
+            font-size: 1.05em;
+            font-weight: bold;
+        }
+
+        .stat-priority {
+            list-style: none;
+            margin-top: 8px;
+            margin-left: 20px;
+        }
+
+        .stat-priority li {
+            color: #b0b0b0;
+            margin: 4px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .stat-priority li:before {
+            content: "▸";
+            color: #ff4444;
+            position: absolute;
+            left: 0;
+        }
+
+        .stat-priority li strong {
+            color: #ffaa44;
+        }
+
+        .key-notes {
+            background-color: #2a1a1a;
+            border-left: 4px solid #ff4444;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .key-notes h3 {
+            color: #ff4444;
+            margin-top: 0;
+        }
+
+        .key-notes ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .key-notes li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .key-notes li:before {
+            content: "✦";
+            color: #ff7744;
+            position: absolute;
+            left: 0;
+        }
+
+        .stat-targets {
+            background-color: #1a2a1a;
+            border-left: 4px solid #44ff44;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .stat-targets h3 {
+            color: #44ff44;
+            margin-top: 0;
+        }
+
+        .stat-targets ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .stat-targets li {
+            margin: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #b0b0b0;
+        }
+
+        .stat-targets li:before {
+            content: "◆";
+            color: #44ff44;
+            position: absolute;
+            left: 0;
+        }
+
+        .progression-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #1a1f3a;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progression-table th {
+            background-color: #ff4444;
+            color: #0a0e27;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .progression-table td {
+            padding: 12px;
+            border-bottom: 1px solid #2a3050;
+        }
+
+        .progression-table tr:hover {
+            background-color: #242a45;
+        }
+
+        .progression-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tips-list {
+            background-color: #1f1f1f;
+            border-left: 4px solid #ffaa44;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .tips-list h3 {
+            color: #ffaa44;
+            margin-top: 0;
+        }
+
+        .tips-list ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .tips-list li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #b0b0b0;
+        }
+
+        .tips-list li:before {
+            content: "►";
+            color: #ffaa44;
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #2a3050;
+            color: #808080;
+            font-size: 0.9em;
+        }
+
+        .emphasis {
+            color: #ff7744;
+            font-weight: bold;
+        }
+
+        .success {
+            color: #44ff44;
+            font-weight: bold;
+        }
+
+        .warning {
+            color: #ffaa44;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Blood Wave Necromancer<br>Gear Progression Guide</h1>
+        <p style="text-align: center; color: #ffaa44; margin-bottom: 30px;">Diablo IV Season 15 - Hell's Legacy</p>
+
+        <div class="stage-nav">
+            <button class="stage-btn active" onclick="switchStage('starter')">Starter</button>
+            <button class="stage-btn" onclick="switchStage('midgame')">Midgame</button>
+            <button class="stage-btn" onclick="switchStage('endgame')">Endgame</button>
+            <button class="stage-btn" onclick="switchStage('push')">Push</button>
+        </div>
+
+        <!-- STARTER STAGE -->
+        <div id="starter" class="stage-content active">
+            <div class="intro-text">
+                <p><strong>Focus:</strong> Survival, Resource Management & Damage Foundations</p>
+                <p><strong>Key Goal:</strong> Acquire <span class="emphasis">Kessime's Legacy</span> to unlock the build's true potential</p>
+                <p><strong>Torment Range:</strong> 1-4 | <strong>Stat Focus:</strong> Maximum Life, Essence Regeneration, Resource Cost Reduction</p>
+            </div>
+
+            <div class="key-notes">
+                <h3>Critical Notes</h3>
+                <ul>
+                    <li><span class="emphasis">Kessime's Legacy</span> is the KEY power spike - doubles your damage by creating two waves per cast</li>
+                    <li>Essence Regeneration + Resource Cost Reduction are MANDATORY for smooth gameplay</li>
+                    <li>Stack Maximum Life for survival in early tiers</li>
+                    <li>Can gamble pants or get drops from Andariel</li>
+                </ul>
+            </div>
+
+            <div class="gear-section">
+                <h3>Recommended Gear & Stat Priorities</h3>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Helm</div>
+                    <div class="gear-name">Hardened Bones</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Essence Regeneration</li>
+                        <li><strong>2.</strong> Resource Cost Reduction</li>
+                        <li><strong>3.</strong> Maximum Life</li>
+                        <li><strong>4.</strong> Armor</li>
+                        <li><strong>5.</strong> Intelligence</li>
+                        <li><strong>6.</strong> Resistance to All Elements</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Chest Armor</div>
+                    <div class="gear-name">Juggernaut's</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Essence Regeneration</li>
+                        <li><strong>2.</strong> Resource Cost Reduction</li>
+                        <li><strong>3.</strong> Maximum Life</li>
+                        <li><strong>4.</strong> Armor</li>
+                        <li><strong>5.</strong> Intelligence</li>
+                        <li><strong>6.</strong> Resistance to All Elements</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Gloves</div>
+                    <div class="gear-name">Rathma's Chosen</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Intelligence</li>
+                        <li><strong>2.</strong> Maximum Life</li>
+                        <li><strong>3.</strong> Critical Strike Chance</li>
+                        <li><strong>4.</strong> Attack Speed</li>
+                        <li><strong>5.</strong> Damage Per Overpower Stack</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Pants</div>
+                    <div class="gear-name">Kessime's Legacy</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Maximum Life</li>
+                        <li><strong>2.</strong> Armor</li>
+                        <li><strong>3.</strong> Intelligence</li>
+                        <li><strong>4.</strong> Cooldown Reduction</li>
+                        <li><strong>5.</strong> Unique Effect (Doubles wave damage)</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Boots</div>
+                    <div class="gear-name">Tidal</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Essence Regeneration</li>
+                        <li><strong>2.</strong> Intelligence</li>
+                        <li><strong>3.</strong> Maximum Life</li>
+                        <li><strong>4.</strong> Armor</li>
+                        <li><strong>5.</strong> Movement Speed</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Amulet</div>
+                    <div class="gear-name">Thickened Blood</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Intelligence</li>
+                        <li><strong>2.</strong> Critical Strike Chance</li>
+                        <li><strong>3.</strong> Attack Speed</li>
+                        <li><strong>4.</strong> Movement Speed</li>
+                        <li><strong>5.</strong> 15% Chance to Restore +12 Primary Resource</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Left Ring</div>
+                    <div class="gear-name">Deluge</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Intelligence</li>
+                        <li><strong>2.</strong> Maximum Life</li>
+                        <li><strong>3.</strong> Critical Strike Chance</li>
+                        <li><strong>4.</strong> Attack Speed</li>
+                        <li><strong>5.</strong> 15% Chance to Restore +12 Primary Resource</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Right Ring</div>
+                    <div class="gear-name">Tides Blood</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Intelligence</li>
+                        <li><strong>2.</strong> Critical Strike Chance</li>
+                        <li><strong>3.</strong> Resource Cost Reduction</li>
+                        <li><strong>4.</strong> Maximum Life</li>
+                        <li><strong>5.</strong> 15% Chance to Restore +12 Primary Resource</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Mainhand</div>
+                    <div class="gear-name">Crushing</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Weapon Damage</li>
+                        <li><strong>2.</strong> x25% Critical Strike Damage Multiplier</li>
+                        <li><strong>3.</strong> Maximum Life</li>
+                        <li><strong>4.</strong> Intelligence</li>
+                        <li><strong>5.</strong> Critical Strike Chance</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Offhand</div>
+                    <div class="gear-name">Coalesced Blood</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Damage Reduction</li>
+                        <li><strong>2.</strong> Critical Strike Chance</li>
+                        <li><strong>3.</strong> Intelligence</li>
+                        <li><strong>4.</strong> Armor</li>
+                        <li><strong>5.</strong> Critical Strike Damage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stat-targets">
+                <h3>Starter Stat Targets</h3>
+                <ul>
+                    <li>Critical Strike Chance: 30-40%</li>
+                    <li>Essence Regeneration: 10-12 (minimum)</li>
+                    <li>Resource Cost Reduction: &gt;18%</li>
+                    <li>Attack Speed: &gt;50% (with Ferocity stacks)</li>
+                    <li>Maximum Life: 500+</li>
+                    <li>Armor: Capped or near-capped</li>
+                </ul>
+            </div>
+
+            <div class="tips-list">
+                <h3>Starter Tips</h3>
+                <ul>
+                    <li><span class="emphasis">Priority #1:</span> Acquire Kessime's Legacy - gamble or farm Andariel</li>
+                    <li>Use <span class="warning">Aspect of Deluge</span> for early resource management</li>
+                    <li>Stack <span class="success">Essence Regeneration</span> on helm and chest</li>
+                    <li>Add 3x "Lucky Hit Chance: Restore Resource" tempers on jewelry</li>
+                    <li>Once you have Kessime's Legacy, the build's power multiplies</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- MIDGAME STAGE -->
+        <div id="midgame" class="stage-content">
+            <div class="intro-text">
+                <p><strong>Focus:</strong> Increasing Damage Output & Maintaining Resource Flow</p>
+                <p><strong>Key Goal:</strong> Transition from survival to balanced offense/defense</p>
+                <p><strong>Torment Range:</strong> 5-8 | <strong>Stat Focus:</strong> Critical Strike Chance, Attack Speed, Balanced Defenses</p>
+            </div>
+
+            <div class="key-notes">
+                <h3>Midgame Strategy</h3>
+                <ul>
+                    <li>Upgrade all gear pieces with optimal <span class="emphasis">Tempers</span></li>
+                    <li>3x "Lucky Hit Chance: Restore Resource" tempers are MANDATORY on jewelry</li>
+                    <li>Critical Strike Chance becomes the new focus stat after Essence Regen/RCR secured</li>
+                    <li>Begin farming for perfect rolls on existing unique pieces</li>
+                </ul>
+            </div>
+
+            <div class="gear-section">
+                <h3>Midgame Upgrades</h3>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Jewelry</div>
+                    <div class="gear-name">Deluge, Tides Blood, Thickened Blood (Tempered)</div>
+                    <ul class="stat-priority">
+                        <li><strong>Temper Focus:</strong> 3x "Lucky Hit Chance: Restore Resource" on all jewelry</li>
+                        <li><strong>Secondary Focus:</strong> Critical Strike Chance, Attack Speed, Intelligence</li>
+                        <li><strong>Goal:</strong> Reach 60-70% Critical Strike Chance</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Helm & Chest</div>
+                    <div class="gear-name">Hardened Bones & Juggernaut's (Optimized Rolls)</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Essence Regeneration (maintain 10-12)</li>
+                        <li><strong>2.</strong> Resource Cost Reduction (increase to 20%+)</li>
+                        <li><strong>3.</strong> Maximum Life (upgrade rolls)</li>
+                        <li><strong>4.</strong> Armor (maintain cap)</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ All Pieces</div>
+                    <div class="gear-name">General Progression</div>
+                    <ul class="stat-priority">
+                        <li><strong>Goal 1:</strong> Farm better rolls on current uniques</li>
+                        <li><strong>Goal 2:</strong> Apply Tempers for +2 versions</li>
+                        <li><strong>Goal 3:</strong> Increase Intelligence across all pieces</li>
+                        <li><strong>Goal 4:</strong> Ready for Torment difficulty jumps</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stat-targets">
+                <h3>Midgame Stat Targets</h3>
+                <ul>
+                    <li>Critical Strike Chance: 60-70%</li>
+                    <li>Attack Speed: 30-40%</li>
+                    <li>Essence Regeneration: 10-12 (stable)</li>
+                    <li>Resource Cost Reduction: 20%+</li>
+                    <li>Maximum Life: 700+</li>
+                    <li>Armor: Capped</li>
+                    <li>Movement Speed: 20%+</li>
+                </ul>
+            </div>
+
+            <div class="tips-list">
+                <h3>Midgame Progression Tips</h3>
+                <ul>
+                    <li>Farm <span class="emphasis">Tempers</span> aggressively to upgrade jewelry</li>
+                    <li>The 3x "Lucky Hit: Restore Resource" tempers are non-negotiable</li>
+                    <li>Begin target-farming Nightmare Dungeons for perfect gear rolls</li>
+                    <li>Upgrade weapons when you find better damage rolls</li>
+                    <li>Prepare paragon boards for endgame optimization</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ENDGAME STAGE -->
+        <div id="endgame" class="stage-content">
+            <div class="intro-text">
+                <p><strong>Focus:</strong> Optimizing Damage & Survivability for High Tiers</p>
+                <p><strong>Key Goal:</strong> Perfect stat rolls, maximize Critical Strike and Attack Speed</p>
+                <p><strong>Torment Range:</strong> 9-12 | <strong>Stat Focus:</strong> All stats optimized with perfect rolls</p>
+            </div>
+
+            <div class="key-notes">
+                <h3>Endgame Philosophy</h3>
+                <ul>
+                    <li>Every gear piece should have <span class="emphasis">optimal rolls</span></li>
+                    <li>Target <span class="success">80-90% Critical Strike Chance</span></li>
+                    <li>Maintain 12+ Essence Regeneration consistently</li>
+                    <li>Farm Nightmare Dungeons for perfect gear with ideal rolls</li>
+                </ul>
+            </div>
+
+            <div class="gear-section">
+                <h3>Endgame Gear Requirements (Perfect Rolls)</h3>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Helm</div>
+                    <div class="gear-name">Hardened Bones (Perfect Rolls)</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Essence Regeneration (12+)</li>
+                        <li><strong>2.</strong> Resource Cost Reduction (20%+)</li>
+                        <li><strong>3.</strong> Maximum Life (800+)</li>
+                        <li><strong>4.</strong> Armor (Capped)</li>
+                        <li><strong>5.</strong> Intelligence (High roll)</li>
+                        <li><strong>6.</strong> Resistance to All Elements (Max 70%)</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Chest Armor</div>
+                    <div class="gear-name">Juggernaut's (Perfect Rolls)</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Essence Regeneration (12+)</li>
+                        <li><strong>2.</strong> Resource Cost Reduction (20%+)</li>
+                        <li><strong>3.</strong> Maximum Life (1000+)</li>
+                        <li><strong>4.</strong> Armor (Capped)</li>
+                        <li><strong>5.</strong> Intelligence (High roll)</li>
+                        <li><strong>6.</strong> Resistance to All Elements (Max)</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Gloves, Boots, Jewelry</div>
+                    <div class="gear-name">All Pieces (Tempered + Perfect Rolls)</div>
+                    <ul class="stat-priority">
+                        <li><strong>Focus:</strong> Critical Strike Chance 30-40% per item</li>
+                        <li><strong>Secondary:</strong> Attack Speed, Intelligence, Damage stats</li>
+                        <li><strong>Jewelry:</strong> 3x "Lucky Hit: Restore Resource" mandatory</li>
+                        <li><strong>Goal:</strong> 80-90% total Critical Strike Chance</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Weapons</div>
+                    <div class="gear-name">Crushing & Coalesced Blood (Perfect Rolls)</div>
+                    <ul class="stat-priority">
+                        <li><strong>Crushing (Mainhand):</strong> Maximize weapon damage, Critical Strike Damage Multiplier x25%+</li>
+                        <li><strong>Coalesced (Offhand):</strong> Damage Reduction 10%+, Critical Strike Chance 30%+</li>
+                        <li><strong>Both:</strong> Maximum Life and Intelligence rolls</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stat-targets">
+                <h3>Endgame Stat Targets (T12 Ready)</h3>
+                <ul>
+                    <li>Critical Strike Chance: 80-90%</li>
+                    <li>Attack Speed: 50%+ (with Ferocity stacks)</li>
+                    <li>Essence Regeneration: 12+ (stable)</li>
+                    <li>Resource Cost Reduction: 20%+</li>
+                    <li>All resistances: Capped (70%)</li>
+                    <li>Armor: Capped or overcapped</li>
+                    <li>Movement Speed: 25%+</li>
+                    <li>Maximum Life: 1000+</li>
+                </ul>
+            </div>
+
+            <div class="tips-list">
+                <h3>Endgame Optimization</h3>
+                <ul>
+                    <li>Farm <span class="emphasis">Nightmare Dungeons</span> for perfect gear drops</li>
+                    <li>Target-farm Tempers to maximize all pieces</li>
+                    <li>Optimize paragon boards heavily - Critical Strike Damage glyphs are priority</li>
+                    <li>Use mercenary (Aldkin) to reach 100% Critical Strike Chance if needed</li>
+                    <li>Begin preparing for solo push content</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PUSH STAGE -->
+        <div id="push" class="stage-content">
+            <div class="intro-text">
+                <p><strong>Focus:</strong> Maximum Optimization for Solo Push & Dungeon Leaderboards</p>
+                <p><strong>Key Goal:</strong> Every stat is perfectly rolled, all aspects optimized for highest tiers</p>
+                <p><strong>Torment Range:</strong> 13+ | <strong>Stat Focus:</strong> Perfection across all stats and affixes</p>
+            </div>
+
+            <div class="key-notes">
+                <h3>Push Stage Requirements</h3>
+                <ul>
+                    <li>All gear must be <span class="emphasis">Ancient/Perfect rolled</span></li>
+                    <li>Every temper slot optimized for the specific piece</li>
+                    <li>Critical Strike Chance should be <span class="success">95-100%</span></li>
+                    <li>Min-max every single stat on every piece</li>
+                </ul>
+            </div>
+
+            <div class="gear-section">
+                <h3>Push Optimization Strategy</h3>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Base Requirements</div>
+                    <div class="gear-name">Foundation for Push</div>
+                    <ul class="stat-priority">
+                        <li>Use Endgame gear as foundation (all items already equipped)</li>
+                        <li>Farm Ancient/Perfect versions of each piece</li>
+                        <li>Apply optimal Tempers to every slot</li>
+                        <li>Min-max every stat for marginal gains</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Weapon Optimization</div>
+                    <div class="gear-name">Crushing (Mainhand) - Critical Priority</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Maximum Weapon Damage roll</li>
+                        <li><strong>2.</strong> x25%+ Critical Strike Damage Multiplier</li>
+                        <li><strong>3.</strong> Critical Strike Chance roll</li>
+                        <li><strong>4.</strong> Maximum Life roll</li>
+                        <li><strong>5.</strong> Intelligence roll</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Offhand Optimization</div>
+                    <div class="gear-name">Coalesced Blood - Survival Focus</div>
+                    <ul class="stat-priority">
+                        <li><strong>1.</strong> Damage Reduction (10-15%)</li>
+                        <li><strong>2.</strong> Critical Strike Chance (30-40%)</li>
+                        <li><strong>3.</strong> Intelligence</li>
+                        <li><strong>4.</strong> Armor (Capped)</li>
+                        <li><strong>5.</strong> Critical Strike Damage</li>
+                    </ul>
+                </div>
+
+                <div class="gear-item">
+                    <div class="gear-slot">⚔ Jewelry Min-Maxing</div>
+                    <div class="gear-name">Deluge, Tides Blood, Thickened Blood - Perfect Pieces</div>
+                    <ul class="stat-priority">
+                        <li><strong>Mandatory Tempers:</strong> 3x "Lucky Hit Chance: Restore Resource"</li>
+                        <li><strong>Secondary Tempers:</strong> Critical Strike Chance, Attack Speed, Intelligence</li>
+                        <li><strong>Goal:</strong> Maximum Critical Strike Chance stacking</li>
+                        <li><strong>All pieces:</strong> High roll Intelligence and Maximum Life</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stat-targets">
+                <h3>Push Stat Targets (Tier 13+)</h3>
+                <ul>
+                    <li>Critical Strike Chance: <span class="emphasis">95-100%</span></li>
+                    <li>Attack Speed: <span class="emphasis">60%+</span> (with Ferocity stacks)</li>
+                    <li>Essence Regeneration: <span class="emphasis">12-15</span> (maximize)</li>
+                    <li>Resource Cost Reduction: <span class="emphasis">25%+</span></li>
+                    <li>All resistances: <span class="emphasis">Capped (70%)</span></li>
+                    <li>Armor: <span class="emphasis">Capped or overcapped</span></li>
+                    <li>Damage Reduction: <span class="emphasis">10-15%</span> (on gear)</li>
+                    <li>Cooldown Reduction: <span class="emphasis">40%+</span> (with unique affixes)</li>
+                    <li>Maximum Life: <span class="emphasis">1200+</span></li>
+                </ul>
+            </div>
+
+            <div class="tips-list">
+                <h3>Push Strategy & Optimization</h3>
+                <ul>
+                    <li><span class="warning">Farm relentlessly</span> for Ancient/Perfect gear rolls in Nightmare Dungeons</li>
+                    <li>Prioritize <span class="emphasis">Temper farming</span> for jewelry pieces</li>
+                    <li>Invest heavily in <span class="success">Critical Strike Damage glyphs</span> on paragon boards</li>
+                    <li>Optimize mercenary setup to achieve <span class="emphasis">100% Critical Strike Chance</span></li>
+                    <li>Test builds frequently to find the right balance of offense/defense</li>
+                    <li>Consider skill rotation adjustments for different rift types</li>
+                    <li>Monitor your attack speed breakpoints for optimal gameplay</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PROGRESSION SUMMARY -->
+        <div style="margin-top: 40px;">
+            <h2>Progression Summary</h2>
+            <table class="progression-table">
+                <thead>
+                    <tr>
+                        <th>Stage</th>
+                        <th>Primary Focus</th>
+                        <th>Crit Chance Target</th>
+                        <th>Essence Regen Target</th>
+                        <th>Difficulty Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="emphasis">Starter</span></td>
+                        <td>Survival & Resource</td>
+                        <td>30-40%</td>
+                        <td>10-12</td>
+                        <td>Torment 1-4</td>
+                    </tr>
+                    <tr>
+                        <td><span class="warning">Midgame</span></td>
+                        <td>Balanced Growth</td>
+                        <td>60-70%</td>
+                        <td>10-12</td>
+                        <td>Torment 5-8</td>
+                    </tr>
+                    <tr>
+                        <td><span class="success">Endgame</span></td>
+                        <td>Optimization</td>
+                        <td>80-90%</td>
+                        <td>12+</td>
+                        <td>Torment 9-12</td>
+                    </tr>
+                    <tr>
+                        <td><span class="emphasis">Push</span></td>
+                        <td>Max Perfection</td>
+                        <td>95-100%</td>
+                        <td>12-15</td>
+                        <td>Torment 13+</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- GENERAL TIPS -->
+        <div style="margin-top: 30px;">
+            <h2>General Progression Tips</h2>
+            <div class="tips-list">
+                <ul>
+                    <li><span class="emphasis">Kessime's Legacy</span> is the ultimate power spike - prioritize getting this first</li>
+                    <li><span class="emphasis">Essence Regeneration</span> and <span class="emphasis">Resource Cost Reduction</span> are mandatory for smooth play at all stages</li>
+                    <li>Use <span class="warning">Aspect of Deluge</span> in early stages for resource management</li>
+                    <li><span class="success">3x "Lucky Hit: Restore Resource"</span> tempers on jewelry are non-negotiable by midgame</li>
+                    <li>Farm <span class="emphasis">Tempers aggressively</span> starting in midgame</li>
+                    <li>Kessime's Legacy can be <span class="success">gambled</span> or <span class="success">drops from Andariel</span></li>
+                    <li>Always prioritize <span class="warning">Critical Strike Chance stacking</span> after resource management is secured</li>
+                    <li>Use Nightmare Dungeons for <span class="success">perfect gear rolls</span> in endgame and push</li>
+                    <li>Paragon board optimization becomes increasingly important in endgame+</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Blood Wave Necromancer Gear Progression Guide | Diablo IV Season 15 - Hell's Legacy</p>
+            <p>Based on Maxroll.gg Build Guide by LordxSaura | Last Updated: September 15, 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        function switchStage(stage) {
+            // Hide all stages
+            document.querySelectorAll('.stage-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.stage-btn').forEach(el => el.classList.remove('active'));
+
+            // Show selected stage
+            document.getElementById(stage).classList.add('active');
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
